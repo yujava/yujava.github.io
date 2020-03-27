@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yujava.github.io</id>
     <title>coding-self</title>
-    <updated>2020-03-27T02:48:32.594Z</updated>
+    <updated>2020-03-27T05:32:33.177Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yujava.github.io"/>
     <link rel="self" href="https://yujava.github.io/atom.xml"/>
@@ -42,9 +42,9 @@
 于是又出现了高级语言比如C，或者是后来的C++,JAVA,C#。 高级语言把多条汇编指令合成成为了一个表达式，并且去除了许多操作细节（比如堆栈操作，寄存器操作），而是以一种更直观的方式来编写程序。<br>
 而面向对象的语言的出现使得程序编写更加符合我们的思维方式。我们不必把尽力放到低层的细节上，而更多的关注程序的本身的逻辑的实现。</p>
 <p>参考<br>
-https://blog.csdn.net/cc_net/article/details/10418711<br>
-https://baike.baidu.com/<br>
-&lt;编码的奥秘&gt;</p>
+计算机原理：https://blog.csdn.net/cc_net/article/details/10418711<br>
+计算机硬件/软件：https://baike.baidu.com/<br>
+通俗易懂揭秘了计算机由来：&lt;编码的奥秘&gt;</p>
 ]]></content>
     </entry>
     <entry>
