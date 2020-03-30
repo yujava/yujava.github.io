@@ -3,10 +3,10 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>JAVA语法 | coding-self</title>
-<link rel="shortcut icon" href="https://yujava.github.io/favicon.ico?v=1585552535372">
+<link rel="shortcut icon" href="http://localhost:4001/favicon.ico?v=1585534201732">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://yujava.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="JAVA语法 | coding-self - Atom Feed" href="https://yujava.github.io/atom.xml">
+<link rel="stylesheet" href="http://localhost:4001/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="JAVA语法 | coding-self - Atom Feed" href="http://localhost:4001/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -21,8 +21,8 @@
     <div class="main">
       <div class="main-content">
         <div class="site-header">
-  <a href="https://yujava.github.io">
-  <img class="avatar" src="https://yujava.github.io/images/avatar.png?v=1585552535372" alt="">
+  <a href="http://localhost:4001">
+  <img class="avatar" src="http://localhost:4001/images/avatar.png?v=1585534201732" alt="">
   </a>
   <h1 class="site-title">
     coding-self
@@ -85,13 +85,13 @@
                 4 min read
               </span>
               
-                <a href="https://yujava.github.io/tag/pXwFVoBfb/" class="post-tag">
+                <a href="http://localhost:4001/tag/pXwFVoBfb/" class="post-tag">
                   # grammar
                 </a>
               
             </div>
             
-              <img class="post-feature-image" src="https://yujava.github.io/post-images/java-yufa.jpg" alt="">
+              <img class="post-feature-image" src="http://localhost:4001/post-images/java-yufa.jpg" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
@@ -117,7 +117,7 @@ JDK除了提供丰富的类库以外，其实还包含了JRE，装好JDK的朋�
 到这里是不是找到了JAVA为什么流行的重要原因之一了！提供丰富的基础操作类库，让开发者只专注于应用程序自身业务即可。</p>
 <h3 id="2jre">2.JRE</h3>
 <p>让计算机系统运行Java应用程序，JRE的内部有一个Java虚拟机（Java Virtual Machine，JVM）以及一些标准的类别函数库，上一篇文章我们提到java属于高级语言，计算机不认识，需要一个“翻译官”，而jre就提供了“翻译官”的功能。下图展示了，JAVA跨平台的原理。</p>
-<figure data-type="image" tabindex="1"><img src="https://yujava.github.io/post-images/1585301288249.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="http://localhost:4001/post-images/1585301288249.png" alt="" loading="lazy"></figure>
 <h2 id="开发工具">开发工具</h2>
 <p>目前主要使用Eclipse和idea两种，推荐idea，如果网上自学教程用的是Eclipse也没关系，idea不仅比Eclipse更好用，还兼容了Eclipse（比如快捷键）。<br>
 有些刚接触全是英文开发工具的朋友会感觉很难用，非常不习惯，我给的建议是，开发工具支持多种语言开发，所以她的功能非常丰富，大家不必像看说明书一样每一个功能都去了解，你想用什么功能就百度什么怎么使用即可。<br>
@@ -156,7 +156,7 @@ JDK除了提供丰富的类库以外，其实还包含了JRE，装好JDK的朋�
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://yujava.github.io/post/compute-base/">
+            <a href="http://localhost:4001/post/compute-base/">
               <h3 class="post-title">
                 计算机常识
               </h3>
@@ -168,7 +168,7 @@ JDK除了提供丰富的类库以外，其实还包含了JRE，装好JDK的朋�
 
         <div class="site-footer">
   Powered by <a href="https://yujava.github.io" target="_blank">yujava</a>
-  <a class="rss" href="https://yujava.github.io/atom.xml" target="_blank">
+  <a class="rss" href="http://localhost:4001/atom.xml" target="_blank">
     <i class="ri-rss-line"></i> RSS
   </a>
 </div>
@@ -177,7 +177,8 @@ JDK除了提供丰富的类库以外，其实还包含了JRE，装好JDK的朋�
     </div>
 
     <script>
-      hljs.initHighlightingOnLoad()
+      hljs.initHighlightingOnLoad();
+		
 
       let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
@@ -215,6 +216,10 @@ JDK除了提供丰富的类库以外，其实还包含了JRE，装好JDK的朋�
         });
       });
 
+	let items = document.querySelectorAll('code');
+	for (let i = 0; i < items.length; i++) {
+		items[i].innerHTML="<ul><li>" + items[i].innerHTML.replace(/\n/g,"\n</li><li>") +"\n</li></ul>";
+	}
     </script>
   </body>
 </html>
