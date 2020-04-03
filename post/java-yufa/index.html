@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>JAVA语法 | coding-self</title>
-<link rel="shortcut icon" href="https://yujava.github.io/favicon.ico?v=1585901775131">
+<link rel="shortcut icon" href="https://yujava.github.io/favicon.ico?v=1585907927058">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://yujava.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="JAVA语法 | coding-self - Atom Feed" href="https://yujava.github.io/atom.xml">
@@ -22,7 +22,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://yujava.github.io">
-  <img class="avatar" src="https://yujava.github.io/images/avatar.png?v=1585901775131" alt="">
+  <img class="avatar" src="https://yujava.github.io/images/avatar.png?v=1585907927058" alt="">
   </a>
   <h1 class="site-title">
     coding-self
@@ -82,7 +82,7 @@
                 2020-03-27
               </span>
               <span>
-                16 min read
+                17 min read
               </span>
               
                 <a href="https://yujava.github.io/tag/pXwFVoBfb/" class="post-tag">
@@ -285,7 +285,67 @@ instanceof运算符用于操作对象实例，检查该对象是否是一个特�
 <pre><code class="language-java">// &quot;&quot;是String类型，属于Object的子类型，结果返回true
 boolean flag = &quot;&quot; instanceof Object; 
 </code></pre>
-<p>f.运算符号的优先级</p>
+<p>f.算数运算符</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">1 + 1</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">1 - 1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*</code></td>
+<td style="text-align:center"><code>1 * 1</code></td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/</code></td>
+<td style="text-align:center"><code>1 / 1</code></td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">%</td>
+<td style="text-align:center">1 % 1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">++</td>
+<td style="text-align:center">i++</td>
+<td style="text-align:center">i=i+1</td>
+</tr>
+<tr>
+<td style="text-align:center">--</td>
+<td style="text-align:center">i--</td>
+<td style="text-align:center">i=i-1</td>
+</tr>
+</tbody>
+</table>
+<p>注意的点：<br>
+<code>+ - * /</code>即数学里面的加减乘除，%是取余操作；<br>
+<code>++</code>和<code>--</code>运算符，只允许用于数值类型的变量，不允许用于表达式中，可以用于数值变量之前或者之后<br>
+用于数值变量之前，在赋值操作中，先对被<code>++</code>或<code>--</code>操作变量值先加1或者先减1，然后在进行其他的操作；<br>
+用于数值变量之后，在赋值操作中，先对被<code>++</code>或<code>--</code>操作变量值进行其他的操作，然后在对其值加1或者减1。<br>
+示例代码</p>
+<pre><code class="language-java">int a=1;
+//  先把a赋值给b，再进行 a=a+1操作；b的结果为1
+int b=a++;
+//  先进行 a=a+1操作，再把a赋值给c；c的结果为3
+int c=++a;
+</code></pre>
+<p><code>分析：int b=a++;先把a赋值给b，此时a的值为1，所以b的值也为1；再进行 a=a+1操作，此时a的值为1+1等于2，int c=++a;先进行 a=a+1操作，此时a的值为2+1等于3，再把a赋值给c，所以c的值也为3</code></p>
+<p>g.运算符号的优先级</p>
 <table>
 <thead>
 <tr>
@@ -372,7 +432,7 @@ boolean flag = &quot;&quot; instanceof Object;
 <code>单算移关与，异或逻条赋</code><br>
 括号级别最高，逗号级别最低，单目 &gt; 算术 &gt; 位移 &gt; 关系 &gt; 逻辑 &gt; 三目 &gt; 赋值。<br>
 <code>运算符号的优先级只做了解即可，首先工作中常用的运算符就那么几种，实在不知道她的优先级是怎么样的，敲几行代码打印运算结果就知道了，学习中对于这种逻辑关系（非真既假，非假既真），或者运算顺序（从左致右，从右至左），无需死记硬背，多写几句代码验证即可</code></p>
-<p>g.类型转换<br>
+<p>h.类型转换<br>
 每个表达式都有类型<br>
 如果表达式的类型对于上下文不合适<br>
 有时可能会导致编译错误<br>
