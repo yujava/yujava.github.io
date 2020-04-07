@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>JAVA语法2 | coding-self</title>
-<link rel="shortcut icon" href="https://yujava.github.io/favicon.ico?v=1586242139413">
+<link rel="shortcut icon" href="https://yujava.github.io/favicon.ico?v=1586255327727">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://yujava.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="JAVA语法2 | coding-self - Atom Feed" href="https://yujava.github.io/atom.xml">
@@ -23,7 +23,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://yujava.github.io">
-  <img class="avatar" src="https://yujava.github.io/images/avatar.png?v=1586242139413" alt="">
+  <img class="avatar" src="https://yujava.github.io/images/avatar.png?v=1586255327727" alt="">
   </a>
   <h1 class="site-title">
     coding-self
@@ -83,7 +83,7 @@
                 2020-04-07
               </span>
               <span>
-                3 min read
+                4 min read
               </span>
               
                 <a href="https://yujava.github.io/tag/pXwFVoBfb/" class="post-tag">
@@ -102,6 +102,7 @@
 学完这个章节后，我们会以<code>伪代码</code>的形式把上面的出门上班流程写出来。<br>
 伪代码（pseudocode），又称为虚拟代码，是高层次描述算法的一种方法。使用伪代码的目的是让被描述的算法可以容易地以任何一种编程语言（Pascal，C，Java，etc）实现。因此，伪代码必须结构清晰、代码简单、可读性好，介于自然语言与编程语言之间。以编程语言的书写形式指明算法职能。使用伪代码，不用拘泥于具体实现。它是半角式化、不标准的语言。可以把整个算法运行过程的结构用接近自然语言的形式（可以使用任何一种你熟悉的文字，关键是把程序的意思表达出来）描述出来。</p>
 <h3 id="1-if语句">1. if语句</h3>
+<p>生活中太多条件语句的例子，比如刚才我们所说的出门上班，<code>根据天气（冷或者热）来决定穿什么衣服</code>，伪代码 if(天气 )</p>
 <p>只有if分支，没有else分支</p>
 <pre><code class="language-java">if (boolean-expression) {
 // statement1;
@@ -145,11 +146,36 @@ if(a &gt; b){
 }
 </code></pre>
 <h3 id="2-switch语句">2. switch语句</h3>
+<p>语法形式</p>
+<pre><code class="language-java">switch (switch-expression) {
+   case value1: 
+       statements for case1;
+       break;
+   case value2:
+       statements for case2;
+       break;
+   ...
+   case valueN: 
+       statements for caseN; 
+       break;
+   default: 
+       statements for default case;
+       break;
+}
+</code></pre>
+<p>注意问题<br>
+switch-expression、常量值value1到valueN必须是整形或字符型<br>
+<code>如果表达式的值和某个case后面的值相同，则从该case之后开始执行，直到break语句为止</code><br>
+default是可有可无的，若没有一个常量与表达式的值相同，则从default之后开始执行</p>
 <h3 id="3-for语句">3.  for语句</h3>
+<p>生活中有太多的事情是重复的，比如 读书期间，三点一线</p>
 <h3 id="4-while语句">4. while语句</h3>
 <h3 id="5-do-while语句">5. do while语句</h3>
-<h3 id="6-数组">6. 数组</h3>
+<h2 id="数组">数组</h2>
+<h2 id="总结">总结</h2>
+<h2 id="练兵">练兵</h2>
 <p>参考<br>
+伪代码、回数定义：https://baike.baidu.com/<br>
 清华大学郑莉教授的Java程序设计ppt</p>
 
               </div>
@@ -164,9 +190,11 @@ if(a &gt; b){
 <li><a href="#3-for%E8%AF%AD%E5%8F%A5">3.  for语句</a></li>
 <li><a href="#4-while%E8%AF%AD%E5%8F%A5">4. while语句</a></li>
 <li><a href="#5-do-while%E8%AF%AD%E5%8F%A5">5. do while语句</a></li>
-<li><a href="#6-%E6%95%B0%E7%BB%84">6. 数组</a></li>
 </ul>
 </li>
+<li><a href="#%E6%95%B0%E7%BB%84">数组</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+<li><a href="#%E7%BB%83%E5%85%B5">练兵</a></li>
 </ul>
 </li>
 </ul>
