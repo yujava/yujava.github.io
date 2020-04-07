@@ -2,14 +2,77 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yujava.github.io</id>
     <title>coding-self</title>
-    <updated>2020-04-07T02:16:10.742Z</updated>
+    <updated>2020-04-07T06:49:06.123Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yujava.github.io"/>
     <link rel="self" href="https://yujava.github.io/atom.xml"/>
-    <subtitle>java自学交流</subtitle>
+    <subtitle>java自学交流，教程持续更新中，欢迎关注交流，喜欢的朋友麻烦给个Star</subtitle>
     <logo>https://yujava.github.io/images/avatar.png</logo>
     <icon>https://yujava.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, coding-self</rights>
+    <entry>
+        <title type="html"><![CDATA[JAVA语法2]]></title>
+        <id>https://yujava.github.io/post/java-yu-fa-2/</id>
+        <link href="https://yujava.github.io/post/java-yu-fa-2/">
+        </link>
+        <updated>2020-04-07T02:27:39.000Z</updated>
+        <content type="html"><![CDATA[<p>写在前面的废话，前面几个章节咱们学的都是&quot;静态的&quot;（计算机常识，Java数据类型与运算符），从这一章节开始，咱们开始接触Java&quot;动态的&quot;知识点。</p>
+<h2 id="流程控制">流程控制</h2>
+<p>生活中大小事情都是按照一定的流程/步骤去运转的。比如 每天早晨出门上班其实也是细分多个步骤的，第一步穿衣服起床，要根据天气（冷或者热）来决定穿什么衣服，然后洗漱，吃早餐（根据家里是否备有早餐来决定先吃早餐再出门还是出门后再吃早餐），出门（根据天气是否下雨来决定带雨伞），根据公司的距离来决定乘坐何种交通方式去上班。<br>
+学完这个章节后，我们会以<code>伪代码</code>的形式把上面的出门上班流程写出来。<br>
+伪代码（pseudocode），又称为虚拟代码，是高层次描述算法的一种方法。使用伪代码的目的是让被描述的算法可以容易地以任何一种编程语言（Pascal，C，Java，etc）实现。因此，伪代码必须结构清晰、代码简单、可读性好，介于自然语言与编程语言之间。以编程语言的书写形式指明算法职能。使用伪代码，不用拘泥于具体实现。它是半角式化、不标准的语言。可以把整个算法运行过程的结构用接近自然语言的形式（可以使用任何一种你熟悉的文字，关键是把程序的意思表达出来）描述出来。</p>
+<h3 id="1-if语句">1. if语句</h3>
+<p>只有if分支，没有else分支</p>
+<pre><code class="language-java">if (boolean-expression) {
+// statement1;
+}
+</code></pre>
+<p>if-else语句</p>
+<pre><code class="language-java">if (boolean-expression) {
+// statement1 ;
+}
+else {
+// statement2 ;
+}
+</code></pre>
+<p>if-else语句的特殊形式</p>
+<pre><code class="language-java">if (boolean expression) {
+//statement1;
+}
+else if (boolean expression) {
+//statement2;
+}
+else if (boolean expression){
+//statement;
+}
+…
+else {
+//statement;
+}
+</code></pre>
+<p>前面咱们学的三目运算符，其实是if-else语句的简写</p>
+<pre><code class="language-java">// 如果a大于b则用a减去b；否则b减去a
+int a = 5;
+int b = 3;
+int diff = a &gt; b ? a-b : b-a;
+
+// int diff = a &gt; b ? a-b : b-a;三目运算表达式，可以用if-else语句表达
+int diff;
+if(a &gt; b){
+    diff = a-b;
+}else{
+    diff = b-a;
+}
+</code></pre>
+<h3 id="2-switch语句">2. switch语句</h3>
+<h3 id="3-for语句">3.  for语句</h3>
+<h3 id="4-while语句">4. while语句</h3>
+<h3 id="5-do-while语句">5. do while语句</h3>
+<h3 id="6-数组">6. 数组</h3>
+<p>参考<br>
+清华大学郑莉教授的Java程序设计ppt</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JAVA语法]]></title>
         <id>https://yujava.github.io/post/java-yufa/</id>
@@ -419,7 +482,7 @@ String strI = i+s;
 <p>Java作为面向对象的高级语言，计算机不能直接执行，所以在使用JAVA时需要安装JAVA环境；<br>
 JDK不但为开发者们提供了运行环境（包含JRE），而且提供了丰富的类库便于开发者使用计算机的基础功能（输入/输出/网络编程/数学计算/日期/集合工具类）。</p>
 <p>初学者对全是英文且功能丰富看起来很&quot;复杂&quot;的IDE开发工具不要有抵触心理，我们要明白一点使用开发工具是为了提高我们的工作效率，所以不必花大量精力去摸索她里面每一个按钮/设置具体用途。你当前需要使用什么功能就百度怎么使用即可，比如百度关键字  idea 创建 Java。<br>
-其实大家可以把IDE开发工具想象成一把瑞士军刀（军迷朋友肯定很熟悉），她上面有250种配件，如果让我们每个配件都去熟悉，肯定得花费不少时间和精力，关键咱们生活中只需要用那几个常用的配件，为了这几个配件而熟悉整个瑞士军刀也有点得不偿失，</p>
+其实大家可以把IDE开发工具想象成一把瑞士军刀（军迷朋友肯定很熟悉），她上面有250种配件，如果让我们每个配件都去熟悉，肯定得花费不少时间和精力，关键咱们生活中只需要用那几个常用的配件，为了这几个配件而熟悉整个瑞士军刀也有点得不偿失。</p>
 <p>Java语法（语言规则）和关键字/保留字（目前有50个），勿需死记硬背，多敲代码多练习，不要怕写错，错误的语法IDE开发工具会报编译错误，初学者如果看不懂英文可以复制到百度翻译查看为什么报错，根据错误信息修正即可。<br>
 不管是口语（英语，德语，日语，国语），还是编程语言，语法都是为了使用者阅读和表达，大家可以想象一下如果一篇文章或者一部小说没有标点符号（咱们常使用的<code>。</code>可以类比Java里面的<code>;</code>）和段落（类比Java里面的<code>{}</code>），这样的文章或小说肯定是失败的。</p>
 <p>Java常量是在程序生存期其值不能改变的量，变量是可以改变的；Java是面向对象语言，之所以她流行，就是因为她的编程思想是最符合实际生活，所以大家在学习Java知识点（概念）时可以贴合自己生活对比。生活中几乎都是变量，时间（每秒都在流逝）、年龄、工资、房租（每年都在涨）、啤酒肚（越来越大）等等，<code>整个世界都在变，我们也需要改变（每天进步一点点），才能适应高速发展的社会</code>；生活中目前没有绝对常量，常量只是相对某个时期或某个特定场景的，比如 牛顿的万有引力定律，统治了物理学很多年，当爱因斯坦的相对论提出来，人们对力学又有新的认识。</p>
@@ -437,7 +500,7 @@ instanceof运算符，是比较两个对象的类型，儿子 instanceof 父亲 
 <p>参考<br>
 Java运算符及运算符的优先级：https://www.jianshu.com/p/9d2204712097<br>
 java int转float精度丢失问题：https://blog.csdn.net/koreyoshi326/article/details/71513208<br>
-清华大学郑莉教授的Java程序设计课件</p>
+清华大学郑莉教授的Java程序设计ppt</p>
 ]]></content>
     </entry>
     <entry>
