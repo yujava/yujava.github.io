@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>JAVA语法2 | coding-self</title>
-<link rel="shortcut icon" href="https://yujava.github.io/favicon.ico?v=1586309877505">
+<link rel="shortcut icon" href="https://yujava.github.io/favicon.ico?v=1586746719912">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://yujava.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="JAVA语法2 | coding-self - Atom Feed" href="https://yujava.github.io/atom.xml">
@@ -23,13 +23,13 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://yujava.github.io">
-  <img class="avatar" src="https://yujava.github.io/images/avatar.png?v=1586309877505" alt="">
+  <img class="avatar" src="https://yujava.github.io/images/avatar.png?v=1586746719912" alt="">
   </a>
   <h1 class="site-title">
     coding-self
   </h1>
   <p class="site-description">
-    java自学交流，教程持续更新中，欢迎关注交流，喜欢的朋友麻烦给个Star
+    Java自学交流，教程持续更新中，欢迎关注交流，喜欢的朋友麻烦给个Star，或转发给其他的朋友，谢谢大家的发财手
   </p>
   <div class="menu-container">
     
@@ -83,7 +83,7 @@
                 2020-04-07
               </span>
               <span>
-                4 min read
+                12 min read
               </span>
               
                 <a href="https://yujava.github.io/tag/pXwFVoBfb/" class="post-tag">
@@ -102,7 +102,6 @@
 学完这个章节后，我们会以<code>伪代码</code>的形式把上面的出门上班流程写出来。<br>
 伪代码（pseudocode），又称为虚拟代码，是高层次描述算法的一种方法。使用伪代码的目的是让被描述的算法可以容易地以任何一种编程语言（Pascal，C，Java，etc）实现。因此，伪代码必须结构清晰、代码简单、可读性好，介于自然语言与编程语言之间。以编程语言的书写形式指明算法职能。使用伪代码，不用拘泥于具体实现。它是半角式化、不标准的语言。可以把整个算法运行过程的结构用接近自然语言的形式（可以使用任何一种你熟悉的文字，关键是把程序的意思表达出来）描述出来。</p>
 <h3 id="1-if语句">1. if语句</h3>
-<p>生活中太多条件语句的例子，比如刚才我们所说的出门上班，<code>根据天气（冷或者热）来决定穿什么衣服</code>，伪代码 if(天气 )</p>
 <p>只有if分支，没有else分支</p>
 <pre><code class="language-java">if (boolean-expression) {
 // statement1;
@@ -145,6 +144,16 @@ if(a &gt; b){
     diff = b-a;
 }
 </code></pre>
+<p>生活中太多条件语句的例子，比如刚才我们所说的出门上班，<code>根据天气（冷或者热）来决定穿什么衣服</code>，伪代码<br>
+if(气温 &gt; -28℃ &amp;&amp; 气温 &lt;= 10℃ ){<br>
+System.out.println(&quot;需要穿羽绒服出门&quot;);<br>
+}else if(气温 &gt; 10℃ &amp;&amp; 气温 &lt; 28℃){<br>
+System.out.println(&quot;需要穿外套出门&quot;);<br>
+}else if(气温 &gt;= 28℃ &amp;&amp; 气温 &lt; 34℃){<br>
+System.out.println(&quot;穿短袖出门&quot;);<br>
+}else{<br>
+System.out.println(&quot;不建议出门&quot;);<br>
+}</p>
 <h3 id="2-switch语句">2. switch语句</h3>
 <p>语法形式</p>
 <pre><code class="language-java">switch (switch-expression) {
@@ -167,16 +176,213 @@ if(a &gt; b){
 switch-expression、常量值value1到valueN必须是整形或字符型<br>
 <code>如果表达式的值和某个case后面的值相同，则从该case之后开始执行，直到break语句为止</code><br>
 default是可有可无的，若没有一个常量与表达式的值相同，则从default之后开始执行</p>
+<p>生活中小朋友上幼儿园有年龄的限制，伪代码<br>
+switch ( 年龄 ) {<br>
+case 3:<br>
+System.out.println(&quot;就读幼儿园小班&quot;);<br>
+break;<br>
+case 4:<br>
+System.out.println(&quot;就读幼儿园中班&quot;);<br>
+break;<br>
+case 5:<br>
+System.out.println(&quot;就读幼儿园大班&quot;);<br>
+break;<br>
+default:<br>
+System.out.println(&quot;该年龄不适合就读幼儿园&quot;);<br>
+break;<br>
+}</p>
 <h3 id="3-for语句">3.  for语句</h3>
-<p>生活中有太多的事情是重复的，比如 读书期间，三点一线</p>
+<p>是Java三个循环语句中功能较强、使用较广泛的一个<br>
+for循环可以嵌套<br>
+语法格式如下</p>
+<pre><code class="language-java">for ( start-expression ;  check-expression ;  update-expression ) {
+    //body of the loop;
+}
+</code></pre>
+<p>start-expression完成循环变量和其他变量的初始化工作<br>
+check-expression是返回布尔值的条件表达式，用于判断循环是否继续<br>
+update-expression用来修整循环变量，改变循环条件<br>
+三个表达式之间用分号（<code>;</code>）隔开</p>
+<p>同样生活中到处可见循环的例子（重复做某件或多件事情），在校期间每天三点一线（宿舍、食堂、教室）；每天在家做饭（煮饭、洗菜、炒菜、吃饭、洗碗）等等。<br>
+以在校一周生活重复三点一线为例（每周天可回家休息一天），伪代码<br>
+for(day d=&quot;周一&quot;; d&lt;&quot;周天&quot;;d++){<br>
+System.out.println(&quot;宿舍睡觉&quot;);<br>
+System.out.println(&quot;食堂吃饭&quot;);<br>
+System.out.println(&quot;教室上课&quot;);<br>
+}</p>
+<p>以在校一月生活重复三点一线为例（每周天可回家休息一天），伪代码<br>
+for(week w=&quot;第一周&quot;;w&lt;=&quot;第四周&quot;;w++){<br>
+for(day d=&quot;周一&quot;; d&lt;&quot;周天&quot;;d++){<br>
+System.out.println(&quot;宿舍睡觉&quot;);<br>
+System.out.println(&quot;食堂吃饭&quot;);<br>
+System.out.println(&quot;教室上课&quot;);<br>
+}<br>
+System.out.println(&quot;回家休息一天&quot;);<br>
+}</p>
+<p>增强for循环<br>
+用来对数组或者集合对象进行遍历<br>
+语法格式：</p>
+<pre><code class="language-java">for (Type name : 数组或集合类型对象) {
+//循环体;
+}
+</code></pre>
+<p>以生活中洗碗为例；伪代码<br>
+for (bowl  s : bowlList) {<br>
+System.out.println(&quot;洗洁精洗一次&quot;);<br>
+System.out.println(&quot;清水洗一次&quot;);<br>
+}</p>
 <h3 id="4-while语句">4. while语句</h3>
+<p>语法形式：</p>
+<pre><code class="language-java">while (check-expression) {
+    //body of the loop;
+}
+</code></pre>
+<p>解释<br>
+条件表达式(check-expression)的返回值为布尔型<br>
+循环体可以是单个语句，也可以是复合语句块</p>
+<p>执行过程<br>
+先判断check-expression的值，为真则执行循环体<br>
+循环体执行完后再无条件转向条件表达式做计算与判断；当计算出条件表达式的值为假时，跳过循环体执行while语句后面的语句。若为真，则继续执行循环</p>
+<p>本人经常看法制节目，已犯罪入狱为例子，某人犯罪被判1年（以365天计算），伪代码<br>
+int day=1;<br>
+while (day &lt;= 365 ) {<br>
+System.out.println(&quot;继续劳动改造&quot;);<br>
+day++;<br>
+}<br>
+System.out.println(&quot;回归社会正常生活&quot;);</p>
 <h3 id="5-do-while语句">5. do while语句</h3>
+<p>语法形式：</p>
+<pre><code class="language-java">do {
+    //body of the loop;
+} while (check-expression);
+</code></pre>
+<p>与while语句很类似，不同的是它首先无条件的执行一遍循环体，再来判断条件表达式的值，若表达式的值为真，则再运行循环体，否则跳出do-while循环，执行下面的语句</p>
+<p>特点：<code>它的循环体至少要执行一次</code></p>
+<p>入狱改造，例子do while写法，伪代码<br>
+int day=1;<br>
+do {<br>
+System.out.println(&quot;继续劳动改造&quot;);<br>
+day++;<br>
+} while (day &lt;= 365);</p>
+<h3 id="6-break语句">6. break语句</h3>
+<p>功能<br>
+跳出循环，不再执行剩余部分</p>
+<p>适用场合<br>
+在switch 结构中，用来终止switch语句的执行在for循环及while循环结构中，用于终止break语句所在的最内层循环；与标号一同使用时，将跳出标号所标识的循环。<br>
+也可用在代码块中，用于跳出它所指定的块。</p>
+<p>生活中有太多重复动作需要break，不然会出很多大问题，比如 吃饭，当吃饱了就不再盛饭了。<br>
+for(rice r:riceList){<br>
+if( i have full){<br>
+break;<br>
+}<br>
+System.out.println(&quot;继续盛饭吃&quot;+r);<br>
+}</p>
+<h3 id="7-continue语句">7. continue语句</h3>
+<p>必须用于循环结构中<br>
+停止本次迭代，回到循环起始处，开始下一次</p>
+<p>迭代过程<br>
+有两种使用格式<br>
+不带标号的continue语句<br>
+终止当前这一轮的循环，跳出本轮循环剩余的语句，直接进入当前循环的下一轮<br>
+带标号的continue语句<br>
+使程序的流程直接转入标号标明的循环层次</p>
+<p>继续以洗碗为例，如果碗已经有缺角就不要了；伪代码<br>
+for (bowl  s : bowlList) {<br>
+if(s is missing corner){<br>
+System.out.println(&quot;碗已经缺角，扔垃圾桶&quot;);<br>
+continue;<br>
+}<br>
+System.out.println(&quot;洗洁精洗一次&quot;);<br>
+System.out.println(&quot;清水洗一次&quot;);<br>
+}</p>
 <h2 id="数组">数组</h2>
+<p>数组由同一类型的对象或者基本数据组成，并封装在同一个标识符（数组名称）下。<br>
+数组是对象<br>
+动态初始化<br>
+可以赋值给Object类型的变量<br>
+在数组中可以调用类Object 的所有方法<br>
+每个数组都有一个由 public final 修饰的成员变量：length ，即数组含有元素的个数（length可以是正数或零）<br>
+数组元素<br>
+数组中的变量被称作数组的元素<br>
+元素没有名字，通过数组名字和非负整数下标值引用数组元素。</p>
+<p>数组引用的声明<br>
+声明数组时无需指明数组元素的个数，也不为数组元素分配内存空间<br>
+不能直接使用，必须经过初始化分配内存后才能使用</p>
+<p>数组声明举例<br>
+Type[ ] arrayName;<br>
+例如：<br>
+int[] intArray;<br>
+String[] stringArray;<br>
+Type arrayName[ ];<br>
+例如：<br>
+int intArray[];<br>
+String stringArray[];</p>
+<p>数组的创建<br>
+用关键字new构成数组的创建表达式，可以指定数组的类型和数组元素的个数。元素个数可以是<br>
+常量也可以是变量<br>
+基本类型数组的每个元素都是一个基本类型的变量；引用类型数组的每个元素都是对象的的引用</p>
+<p>数组的创建举例<br>
+arryName=new Type[componets number];<br>
+例如：<br>
+int[] ai; ai=new int[10];<br>
+String[] s; s=new String[3];<br>
+或者可以将数组的声明和创建一并执行<br>
+int ai[]=new int[10];<br>
+可以在一条声明语句中创建多个数组<br>
+String[] s1=new String[3], s2=new String[8];</p>
+<p>数组元素的初始化<br>
+声明数组名时，给出了数组的初始值，程序便会利用数组初始值创建数组并对它的各个元素进行初始化<br>
+int a[]={22, 33, 44, 55};<br>
+创建数组的时，如果没有指定初始值，数组便被赋予默认值初始值。<br>
+基本类型数值数据，默认的初始值为0；<br>
+boolean类型数据，默认值为false;<br>
+引用类型元素的默认值为null。<br>
+程序也可以在数组被构造之后改变数组元素值</p>
+<p>使用数组<br>
+引用数组的一个元素：<br>
+arrayName[index]<br>
+数组下标必须是 int , short, byte, 或者 char。<br>
+下标从零开始计数。<br>
+元素的个数即为数组的长度，可以通过 arryName.length得到。<br>
+元素下标最大值为 length – 1，如果超过最大值，将会产生数组越界异常（ArrayIndexOutOfBoundsException）<br>
+数组名是一个引用：</p>
+<pre><code class="language-java">public class Arrays{ 
+    public static void main(String[] args){
+        int[] a1 = { 1, 2, 3, 4, 5 };
+        int[] a2;
+        a2 = a1;
+        for(int i = 0; i &lt; a2.length; i++) a2[i]++;
+        for(int i = 0; i &lt; a1.length; i++)
+        System.out.println( &quot;a1[&quot; + i + &quot;] = &quot; + a1[i]);
+    }
+}
+</code></pre>
+<p>运行结果：<br>
+a1[0] = 2<br>
+a1[1] = 3<br>
+a1[2] = 4<br>
+a1[3] = 5<br>
+a1[4] = 6</p>
+<p>字符串引用构成的数组——每个元素都是引用</p>
+<pre><code class="language-java">public class ArrayOfStringsDemo{ 
+    public static void main(String[] args){ 
+        String[] anArray ={ &quot;String One&quot;, &quot;String Two&quot;, &quot;String Three&quot;};
+        for (int i = 0; i &lt; anArray.length; i++){ 
+            System.out.println(anArray[i].toLowerCase());
+        }
+    }
+}
+</code></pre>
+<p>运行结果：<br>
+string one<br>
+string two<br>
+string three</p>
 <h2 id="总结">总结</h2>
 <h2 id="练兵">练兵</h2>
+<p>数学上：一般的，一个自然数，如果该自然数从左向右读和从右向左读都是一样的数，则这个数为回数。比如101，32123，9999等等都是回数。请用程序证明18977981是不是回数？（15年面试题）</p>
 <p>参考<br>
-伪代码、回数定义：https://baike.baidu.com/<br>
-清华大学郑莉教授的Java程序设计ppt</p>
+清华大学郑莉教授的Java程序设计ppt（该章节除了举生活实例内容属于原创，其他教学内容均转载于郑莉教授的Java程序设计ppt）<br>
+伪代码、回数定义：https://baike.baidu.com/</p>
 
               </div>
               <div class="toc-container">
@@ -190,6 +396,8 @@ default是可有可无的，若没有一个常量与表达式的值相同，则�
 <li><a href="#3-for%E8%AF%AD%E5%8F%A5">3.  for语句</a></li>
 <li><a href="#4-while%E8%AF%AD%E5%8F%A5">4. while语句</a></li>
 <li><a href="#5-do-while%E8%AF%AD%E5%8F%A5">5. do while语句</a></li>
+<li><a href="#6-break%E8%AF%AD%E5%8F%A5">6. break语句</a></li>
+<li><a href="#7-continue%E8%AF%AD%E5%8F%A5">7. continue语句</a></li>
 </ul>
 </li>
 <li><a href="#%E6%95%B0%E7%BB%84">数组</a></li>
