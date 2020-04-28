@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yujava.github.io</id>
     <title>coding-self</title>
-    <updated>2020-04-13T02:58:46.670Z</updated>
+    <updated>2020-04-28T05:51:46.036Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yujava.github.io"/>
     <link rel="self" href="https://yujava.github.io/atom.xml"/>
@@ -11,298 +11,106 @@
     <icon>https://yujava.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, coding-self</rights>
     <entry>
-        <title type="html"><![CDATA[JAVA语法2]]></title>
-        <id>https://yujava.github.io/post/java-yu-fa-2/</id>
-        <link href="https://yujava.github.io/post/java-yu-fa-2/">
+        <title type="html"><![CDATA[JAVA入行攻略]]></title>
+        <id>https://yujava.github.io/post/java-index/</id>
+        <link href="https://yujava.github.io/post/java-index/">
         </link>
-        <updated>2020-04-07T02:27:39.000Z</updated>
-        <content type="html"><![CDATA[<p>写在前面的废话，前面几个章节咱们学的都是&quot;静态的&quot;（计算机常识，Java数据类型与运算符），从这一章节开始，咱们开始接触Java&quot;动态的&quot;知识点。</p>
-<h2 id="流程控制">流程控制</h2>
-<p>生活中大小事情都是按照一定的流程/步骤去运转的。比如 每天早晨出门上班其实也是细分多个步骤的，第一步穿衣服起床，要根据天气（冷或者热）来决定穿什么衣服，然后洗漱，吃早餐（根据家里是否备有早餐来决定先吃早餐再出门还是出门后再吃早餐），出门（根据天气是否下雨来决定带雨伞），根据公司的距离来决定乘坐何种交通方式去上班。<br>
-学完这个章节后，我们会以<code>伪代码</code>的形式把上面的出门上班流程写出来。<br>
-伪代码（pseudocode），又称为虚拟代码，是高层次描述算法的一种方法。使用伪代码的目的是让被描述的算法可以容易地以任何一种编程语言（Pascal，C，Java，etc）实现。因此，伪代码必须结构清晰、代码简单、可读性好，介于自然语言与编程语言之间。以编程语言的书写形式指明算法职能。使用伪代码，不用拘泥于具体实现。它是半角式化、不标准的语言。可以把整个算法运行过程的结构用接近自然语言的形式（可以使用任何一种你熟悉的文字，关键是把程序的意思表达出来）描述出来。</p>
-<h3 id="1-if语句">1. if语句</h3>
-<p>只有if分支，没有else分支</p>
-<pre><code class="language-java">if (boolean-expression) {
-// statement1;
-}
+        <updated>2020-04-28T05:48:05.000Z</updated>
+        <content type="html"><![CDATA[<p>写在前面的废话：早在18年，本人就有意发表相关教程（或博客或自己录制视频等方式），来帮助更多想通过自身努力入行JAVA行业非计算机专业的学弟学妹们。无奈工作原因，导致这件事情一直搁置着；如今有幸入职一家加班少的公司，终于能在下班之余抽空来完成18年未完成的计划。</p>
+<p>众所周知，得益于互联网的高速发展，近些年IT行业的福利待遇水涨船高。对于咱们既没有好的创业条件或者机会，又没有什么社会资源（主要是家庭背景和人脉关系）刚毕业的学生来说，选择一个好的行业至关重要。在这里我向那些<code>没有就读计算机相关专业的朋友（无论是大专还是本科生或初高中辍学）</code>提供几条入行IT行业的建议；如果你认同，欢迎与我交流，不认同的朋友，麻烦不要喷。</p>
+<pre><code>培训学校
+自学
+通过国家举行的考试（比如成人高考、专升本、考研等）考进理想学校并选计算机相关专业
+自学+行内人士（有熟人从事IT行业）指导
 </code></pre>
-<p>if-else语句</p>
-<pre><code class="language-java">if (boolean-expression) {
-// statement1 ;
-}
-else {
-// statement2 ;
-}
-</code></pre>
-<p>if-else语句的特殊形式</p>
-<pre><code class="language-java">if (boolean expression) {
-//statement1;
-}
-else if (boolean expression) {
-//statement2;
-}
-else if (boolean expression){
-//statement;
-}
-…
-else {
-//statement;
-}
-</code></pre>
-<p>前面咱们学的三目运算符，其实是if-else语句的简写</p>
-<pre><code class="language-java">// 如果a大于b则用a减去b；否则b减去a
-int a = 5;
-int b = 3;
-int diff = a &gt; b ? a-b : b-a;
-
-// int diff = a &gt; b ? a-b : b-a;三目运算表达式，可以用if-else语句表达
-int diff;
-if(a &gt; b){
-    diff = a-b;
-}else{
-    diff = b-a;
-}
-</code></pre>
-<p>生活中太多条件语句的例子，比如刚才我们所说的出门上班，<code>根据天气（冷或者热）来决定穿什么衣服</code>，伪代码<br>
-if(气温 &gt; -28℃ &amp;&amp; 气温 &lt;= 10℃ ){<br>
-System.out.println(&quot;需要穿羽绒服出门&quot;);<br>
-}else if(气温 &gt; 10℃ &amp;&amp; 气温 &lt; 28℃){<br>
-System.out.println(&quot;需要穿外套出门&quot;);<br>
-}else if(气温 &gt;= 28℃ &amp;&amp; 气温 &lt; 34℃){<br>
-System.out.println(&quot;穿短袖出门&quot;);<br>
-}else{<br>
-System.out.println(&quot;不建议出门&quot;);<br>
-}</p>
-<h3 id="2-switch语句">2. switch语句</h3>
-<p>语法形式</p>
-<pre><code class="language-java">switch (switch-expression) {
-   case value1: 
-       statements for case1;
-       break;
-   case value2:
-       statements for case2;
-       break;
-   ...
-   case valueN: 
-       statements for caseN; 
-       break;
-   default: 
-       statements for default case;
-       break;
-}
-</code></pre>
-<p>注意问题<br>
-switch-expression、常量值value1到valueN必须是整形或字符型<br>
-<code>如果表达式的值和某个case后面的值相同，则从该case之后开始执行，直到break语句为止</code><br>
-default是可有可无的，若没有一个常量与表达式的值相同，则从default之后开始执行</p>
-<p>生活中小朋友上幼儿园有年龄的限制，伪代码<br>
-switch ( 年龄 ) {<br>
-case 3:<br>
-System.out.println(&quot;就读幼儿园小班&quot;);<br>
-break;<br>
-case 4:<br>
-System.out.println(&quot;就读幼儿园中班&quot;);<br>
-break;<br>
-case 5:<br>
-System.out.println(&quot;就读幼儿园大班&quot;);<br>
-break;<br>
-default:<br>
-System.out.println(&quot;该年龄不适合就读幼儿园&quot;);<br>
-break;<br>
-}</p>
-<h3 id="3-for语句">3.  for语句</h3>
-<p>是Java三个循环语句中功能较强、使用较广泛的一个<br>
-for循环可以嵌套<br>
-语法格式如下</p>
-<pre><code class="language-java">for ( start-expression ;  check-expression ;  update-expression ) {
-    //body of the loop;
-}
-</code></pre>
-<p>start-expression完成循环变量和其他变量的初始化工作<br>
-check-expression是返回布尔值的条件表达式，用于判断循环是否继续<br>
-update-expression用来修整循环变量，改变循环条件<br>
-三个表达式之间用分号（<code>;</code>）隔开</p>
-<p>同样生活中到处可见循环的例子（重复做某件或多件事情），在校期间每天三点一线（宿舍、食堂、教室）；每天在家做饭（煮饭、洗菜、炒菜、吃饭、洗碗）等等。<br>
-以在校一周生活重复三点一线为例（每周天可回家休息一天），伪代码<br>
-for(day d=&quot;周一&quot;; d&lt;&quot;周天&quot;;d++){<br>
-System.out.println(&quot;宿舍睡觉&quot;);<br>
-System.out.println(&quot;食堂吃饭&quot;);<br>
-System.out.println(&quot;教室上课&quot;);<br>
-}</p>
-<p>以在校一月生活重复三点一线为例（每周天可回家休息一天），伪代码<br>
-for(week w=&quot;第一周&quot;;w&lt;=&quot;第四周&quot;;w++){<br>
-for(day d=&quot;周一&quot;; d&lt;&quot;周天&quot;;d++){<br>
-System.out.println(&quot;宿舍睡觉&quot;);<br>
-System.out.println(&quot;食堂吃饭&quot;);<br>
-System.out.println(&quot;教室上课&quot;);<br>
-}<br>
-System.out.println(&quot;回家休息一天&quot;);<br>
-}</p>
-<p>增强for循环<br>
-用来对数组或者集合对象进行遍历<br>
-语法格式：</p>
-<pre><code class="language-java">for (Type name : 数组或集合类型对象) {
-//循环体;
-}
-</code></pre>
-<p>以生活中洗碗为例；伪代码<br>
-for (bowl  s : bowlList) {<br>
-System.out.println(&quot;洗洁精洗一次&quot;);<br>
-System.out.println(&quot;清水洗一次&quot;);<br>
-}</p>
-<h3 id="4-while语句">4. while语句</h3>
-<p>语法形式：</p>
-<pre><code class="language-java">while (check-expression) {
-    //body of the loop;
-}
-</code></pre>
-<p>解释<br>
-条件表达式(check-expression)的返回值为布尔型<br>
-循环体可以是单个语句，也可以是复合语句块</p>
-<p>执行过程<br>
-先判断check-expression的值，为真则执行循环体<br>
-循环体执行完后再无条件转向条件表达式做计算与判断；当计算出条件表达式的值为假时，跳过循环体执行while语句后面的语句。若为真，则继续执行循环</p>
-<p>本人经常看法制节目，已犯罪入狱为例子，某人犯罪被判1年（以365天计算），伪代码<br>
-int day=1;<br>
-while (day &lt;= 365 ) {<br>
-System.out.println(&quot;继续劳动改造&quot;);<br>
-day++;<br>
-}<br>
-System.out.println(&quot;回归社会正常生活&quot;);</p>
-<h3 id="5-do-while语句">5. do while语句</h3>
-<p>语法形式：</p>
-<pre><code class="language-java">do {
-    //body of the loop;
-} while (check-expression);
-</code></pre>
-<p>与while语句很类似，不同的是它首先无条件的执行一遍循环体，再来判断条件表达式的值，若表达式的值为真，则再运行循环体，否则跳出do-while循环，执行下面的语句</p>
-<p>特点：<code>它的循环体至少要执行一次</code></p>
-<p>入狱改造，例子do while写法，伪代码<br>
-int day=1;<br>
-do {<br>
-System.out.println(&quot;继续劳动改造&quot;);<br>
-day++;<br>
-} while (day &lt;= 365);</p>
-<h3 id="6-break语句">6. break语句</h3>
-<p>功能<br>
-跳出循环，不再执行剩余部分</p>
-<p>适用场合<br>
-在switch 结构中，用来终止switch语句的执行在for循环及while循环结构中，用于终止break语句所在的最内层循环；与标号一同使用时，将跳出标号所标识的循环。<br>
-也可用在代码块中，用于跳出它所指定的块。</p>
-<p>生活中有太多重复动作需要break，不然会出很多大问题，比如 吃饭，当吃饱了就不再盛饭了。<br>
-for(rice r:riceList){<br>
-if( i have full){<br>
-break;<br>
-}<br>
-System.out.println(&quot;继续盛饭吃&quot;+r);<br>
-}</p>
-<h3 id="7-continue语句">7. continue语句</h3>
-<p>必须用于循环结构中<br>
-停止本次迭代，回到循环起始处，开始下一次</p>
-<p>迭代过程<br>
-有两种使用格式<br>
-不带标号的continue语句<br>
-终止当前这一轮的循环，跳出本轮循环剩余的语句，直接进入当前循环的下一轮<br>
-带标号的continue语句<br>
-使程序的流程直接转入标号标明的循环层次</p>
-<p>继续以洗碗为例，如果碗已经有缺角就不要了；伪代码<br>
-for (bowl  s : bowlList) {<br>
-if(s is missing corner){<br>
-System.out.println(&quot;碗已经缺角，扔垃圾桶&quot;);<br>
-continue;<br>
-}<br>
-System.out.println(&quot;洗洁精洗一次&quot;);<br>
-System.out.println(&quot;清水洗一次&quot;);<br>
-}</p>
-<h2 id="数组">数组</h2>
-<p>数组由同一类型的对象或者基本数据组成，并封装在同一个标识符（数组名称）下。<br>
-数组是对象<br>
-动态初始化<br>
-可以赋值给Object类型的变量<br>
-在数组中可以调用类Object 的所有方法<br>
-每个数组都有一个由 public final 修饰的成员变量：length ，即数组含有元素的个数（length可以是正数或零）<br>
-数组元素<br>
-数组中的变量被称作数组的元素<br>
-元素没有名字，通过数组名字和非负整数下标值引用数组元素。</p>
-<p>数组引用的声明<br>
-声明数组时无需指明数组元素的个数，也不为数组元素分配内存空间<br>
-不能直接使用，必须经过初始化分配内存后才能使用</p>
-<p>数组声明举例<br>
-Type[ ] arrayName;<br>
-例如：<br>
-int[] intArray;<br>
-String[] stringArray;<br>
-Type arrayName[ ];<br>
-例如：<br>
-int intArray[];<br>
-String stringArray[];</p>
-<p>数组的创建<br>
-用关键字new构成数组的创建表达式，可以指定数组的类型和数组元素的个数。元素个数可以是<br>
-常量也可以是变量<br>
-基本类型数组的每个元素都是一个基本类型的变量；引用类型数组的每个元素都是对象的的引用</p>
-<p>数组的创建举例<br>
-arryName=new Type[componets number];<br>
-例如：<br>
-int[] ai; ai=new int[10];<br>
-String[] s; s=new String[3];<br>
-或者可以将数组的声明和创建一并执行<br>
-int ai[]=new int[10];<br>
-可以在一条声明语句中创建多个数组<br>
-String[] s1=new String[3], s2=new String[8];</p>
-<p>数组元素的初始化<br>
-声明数组名时，给出了数组的初始值，程序便会利用数组初始值创建数组并对它的各个元素进行初始化<br>
-int a[]={22, 33, 44, 55};<br>
-创建数组的时，如果没有指定初始值，数组便被赋予默认值初始值。<br>
-基本类型数值数据，默认的初始值为0；<br>
-boolean类型数据，默认值为false;<br>
-引用类型元素的默认值为null。<br>
-程序也可以在数组被构造之后改变数组元素值</p>
-<p>使用数组<br>
-引用数组的一个元素：<br>
-arrayName[index]<br>
-数组下标必须是 int , short, byte, 或者 char。<br>
-下标从零开始计数。<br>
-元素的个数即为数组的长度，可以通过 arryName.length得到。<br>
-元素下标最大值为 length – 1，如果超过最大值，将会产生数组越界异常（ArrayIndexOutOfBoundsException）<br>
-数组名是一个引用：</p>
-<pre><code class="language-java">public class Arrays{ 
-    public static void main(String[] args){
-        int[] a1 = { 1, 2, 3, 4, 5 };
-        int[] a2;
-        a2 = a1;
-        for(int i = 0; i &lt; a2.length; i++) a2[i]++;
-        for(int i = 0; i &lt; a1.length; i++)
-        System.out.println( &quot;a1[&quot; + i + &quot;] = &quot; + a1[i]);
-    }
-}
-</code></pre>
-<p>运行结果：<br>
-a1[0] = 2<br>
-a1[1] = 3<br>
-a1[2] = 4<br>
-a1[3] = 5<br>
-a1[4] = 6</p>
-<p>字符串引用构成的数组——每个元素都是引用</p>
-<pre><code class="language-java">public class ArrayOfStringsDemo{ 
-    public static void main(String[] args){ 
-        String[] anArray ={ &quot;String One&quot;, &quot;String Two&quot;, &quot;String Three&quot;};
-        for (int i = 0; i &lt; anArray.length; i++){ 
-            System.out.println(anArray[i].toLowerCase());
-        }
-    }
-}
-</code></pre>
-<p>运行结果：<br>
-string one<br>
-string two<br>
-string three</p>
+<h2 id="四种方式的利弊">四种方式的利弊。</h2>
+<p>从个人角度分析</p>
+<h3 id="1-培训学校">1. 培训学校</h3>
+<p>首先，我觉得培训学校最大的好处是稳妥、省心，之所以说她稳妥是因为有专业的老师给你上课，你只要跟着老师的学习路线走，直到毕业就业为止。省心主要体现当你遇到学习难题，在校期间可随时跟老师沟通，可以快速解答你的难题。</p>
+<blockquote>
+<p>凡是都有利弊，培训学校也不是完美的。培训学校的弊端之一是高额的费用，以北大青鸟2010年JAVA培训的收费情况为例，为期1年半的培训总学费将近4万元，加上购买笔记本电脑（5000左右）、资料费、伙食费学完到就业至少准备5万元费用。<br>
+相比费用，我觉得培训学校最大的弊端是很多学生缺乏自学能力的培养，读过大学的朋友都知道，到了大学一个辅导员可能带好几个班，给你上课的老师也不在是固定的那几个，大学生涯学生们能有多少成长很大程度看自己的自我管理和自我学习能力。<code>自学能力是决定你踏入社会后能否在短时间里有明显进步的重要因素，特别是咱们搞IT的，技术的更迭非常快，你只有不断的给自己充电才能保证不被行业淘汰</code>。当然并不是说培训学校的学生没有自学能力，只是她的这种跟义务教育类似的授课模式导致学生们缺乏了自学能力的锻炼。</p>
+</blockquote>
+<h3 id="2-自学">2. 自学</h3>
+<p>我们再来看自学，与培训学校是完全相反的一种方式，首先是0费用（<code>现在网上有各种免费的教学视频，这里推荐学堂在线APP里面，清华大学，郑莉教授的Java程序设计</code>），另一个就是对自学能力极大的提升，因为当你遇到问题除了百度/谷歌以外，就得靠自己去解决。</p>
+<blockquote>
+<p>自学也有她的弊端，首先她需要比较强的自学能力和足够的耐心去面对学习过程遇到的难题。最大的难题就是自学完成后如何就业，在这里我要提醒一下，会写代码并不等于可以找到与之匹配的工作。<br>
+你得通过企业发起的面试邀请。<code>面试也是一门学问，分为好几个步骤，从写简历到投递简历、技术面试（有的公司分为笔试和面试，面试可能又分为初试、复试等）、HR面谈、谈薪、入职</code>；如果你是非计算机毕业或者没有读过培训学校，这里面每个环节都得靠自己去摸索。<br>
+众多环节中，你遇到某一个问题可能导致你想放弃从事IT行业的决心；比如，没有面试电话（可能是简历写得不好、或学历不够、或投递的方式不正确）；技术面试总通过不了；技术通过了，但是HR面谈挂了；技术通过了，HR面谈也没问题，谈薪谈崩了；所有面试都过了，入职资料备不齐，入职失败；<br>
+当我写到这里，同行的同事可能会笑话我，只要技术面试通过，肯定能拿到offer（入职通知书），我想说的是，上面我说的每种情况都不是胡编乱造危言耸听的，因为确确实实每种情况都在我身上发生过。<br>
+<code>这在里我再次强调，本篇教程针对的是非计算机专业（大专/本科/初高中辍学）的朋友</code>，如果你是计算机相关专业科班出身或曾经就读过培训学校的朋友不认同我的说法，是很正常的，据我所知，培训学校在最后一个学期专门做就业指导，而大部分计算机班科出身的学生都能通过校招环节找到实习工作。所以他们可能不需要独自去了解这些东西，他们可能只要按部就班就能顺利入行IT行业。</p>
+</blockquote>
+<h3 id="3-国考">3. 国考</h3>
+<p>通过国家举行的考试（比如成人高考、专升本、考研等）考进理想学校并选计算机相关专业。<br>
+可能大家会觉得通过国考的方式考入理想学校就读计算机专业这种特殊的方式，根本就是开玩笑，花这个时间精力和成本是就读培训学校或自学的很多倍；没错，这种方式确实是很需要高昂的成本，首先得像高考一样去复习，然后又参加一次&quot;高考&quot;，还不一定一次就能考得上。考上后时间成本，读书学费等成本都是不小的开销。</p>
+<blockquote>
+<p>凡是都有两面性，这种方式也有她的好处，最显而易见的是不管通过哪种国考方式入学毕业后，你的学历<br>
+肯定是有所提升（很多大企业对学历一直都很重视）；<br>
+学历是实实在在看的见的提升，<code>还有一些潜藏于心、不容易被发掘的部分，比如：入学理想大学就读计算机相关专业，更全面、更系统掌握计算机知识，为以后的自我提升打下坚实基础</code>；<br>
+另一个你就读更好的学校，<code>你认识的老师、同学相对以前大概率是更优秀的，这对你以后步入社会能获得更多机会提供了条件</code>。说到这里，很多朋友想知道就读培训学校和大学对应专业到底有什么不同。这里不做任何评价，我只列举一个培训学校安排的课程与大学对应专业做对比，大家自己去品。</p>
+</blockquote>
+<p>以武汉大学计算机科学与技术专业为例</p>
+<blockquote>
+<p>计算机科学导论、数字逻辑、高级语言程序设计、离散数学、数据结构、计算机组成与设计、操作系统、云计算平台与技术[学科基础（平台）课程]<br>
+数据库系统、计算机网络、编译原理、软件工程、算法设计与分析、嵌入式系统、数字逻辑课程设计、计算机组成与设计课程设计、操作系统课程设计、计算机网络课程设计、大型应用软件课程设计等[其他主干课程]</p>
+</blockquote>
+<p>以传智播客(黑马程序员)培训学校培训javaEE为例</p>
+<blockquote>
+<p>Java基础语法、面向对象基础、API基础	、集合基础（JavaEE基础班课程）；异常、IO、多线程、网络编程、Lambda、反射（Java语言进阶）；<br>
+Git、Linux、HTML5&amp;CSS&amp;Nginx、Servlet、Cookie&amp;Session、MySQL、JDBC、MyBatis、JavaScript、VUE、ElementUI+案例、Redis、Maven（JavaWeb）；Spring、SpringMVC、Zookeeper、Dubbo、Spring Boot、Spring Cloud、RabbitMQ、Elasticsearch（框架阶段）；项目实战</p>
+</blockquote>
+<p>从两者课程安排来看，个人觉得培训学校几乎全部都是工作中应用技术，而大学是培养学生对本专业系统而深刻的认识（知其然知其所以然）。关于培训学校和大学科班专业的区别，有兴趣的朋友可在网上百度，多看些评论，自己慢慢细品</p>
+<h3 id="4自学指导">4.自学+指导</h3>
+<p>主要靠自学，不懂的向行内人士（有熟人从事IT行业）请教。<br>
+最后一种方式，是较上面三种方式比较趋中的一种，也是我个人比较推荐的一种；既培养了自学能力又能在学习或找工作过程中遇到困难而不会孤立无助，<code>关键还能省几万培训学费</code>（没有从事IT熟人的朋友，可与我联系，我会利用下班空闲时间帮大家，解答学习或面试遇到的问题，已助大家早日找到心仪的工作）。</p>
 <h2 id="总结">总结</h2>
-<h2 id="练兵">练兵</h2>
-<p>数学上：一般的，一个自然数，如果该自然数从左向右读和从右向左读都是一样的数，则这个数为回数。比如101，32123，9999等等都是回数。请用程序证明18977981是不是回数？（15年面试题）</p>
+<p>如果时间充裕且条件允许<code>并对编程很感兴趣</code>，推荐第三种方式通过国考方式进入理想学校并选计算机相关专业；<br>
+如果想省心，能准备几万的学费，可选第一种报名培训学校；<br>
+如果想省一笔不小的培训费，并且培养自己的自学能力选择，第四种方式自学+行内人士指导（没有熟人的可与我联系，通过下班空闲时间传授JAVA知识或面试经验，当然会适当收取少许费用，<code>保证就业，找不到工作费用全免，先上课后付费，没学懂可拒绝支付费用，总费用不及培训学校十分之一，针对贫困且好学的朋友，可免费指导教学</code>）是非常好的选择。<br>
+如果对自己的自学能力足够自信，并有遇到困难不放弃的决心，第二种方式自学也是不错的选择</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[计算机常识]]></title>
+        <id>https://yujava.github.io/post/compute-base/</id>
+        <link href="https://yujava.github.io/post/compute-base/">
+        </link>
+        <updated>2020-04-27T05:50:03.000Z</updated>
+        <content type="html"><![CDATA[<p>写在前面的废话：学习编程为什么要了解计算机原理相关知识，直接学习编程会敲代码不能胜任工作吗？答案是可以的，你只要会写代码可以胜任一般的工作，但是可以肯定的是只会写代码，你在IT行业的职业生涯不会长久。<br>
+其实这个问题跟就读培训学校和大学对应专业有点类似，知乎上有个比较有趣的评论，如果你想学会开车，报个驾校即可，但想造汽车，至少得读个大学。<br>
+这里举一个我自己自学的例子，我再看完某培训学校《JAVA28天入门》一套视频之后，居然还不知道程序是自上而下顺序执行的。</p>
+<p>进入主题，以下内容如有不对之处，欢迎联系指正。</p>
+<h2 id="计算机基本原理">计算机基本原理</h2>
+<p>众所周知，目前我们使用的计算机（笔记本或台式电脑），是由硬件和软件组合的。</p>
+<h3 id="1计算机硬件">1.计算机硬件</h3>
+<p>CPU(中央处理器,进行数据运算、传输等所有指令的执行时，都需要按照中央处理器的引导进行，作为整个计算机的心脏，控制这计算机的信息加工所有过程。)</p>
+<p>输入输出设备(键盘、摄像机、鼠标以及麦克风等属于输入设备；打印机以及显示器等属于输出设备，显示数据展示给人们看的设备)</p>
+<p>存储设备（RAM[random access memory]即随机存储内存，我们常说的内存，这种存储器在断电时将丢失其存储内容，故主要用于存储短时间使用的程序。ROM[Read-Only Memory]即只读内存，我们常说的硬盘，是一种只能读出事先所存数据的固态半导体存储器。）</p>
+<h3 id="2计算机软件">2.计算机软件</h3>
+<p>系统软件：系统软件是各类操作系统，如windows、Linux、UNIX等，还包括操作系统的补丁程序及硬件驱动程序，都是系统软件类。</p>
+<p>系统软件是负责管理计算机系统中各种独立的硬件，使得它们可以协调工作。系统软件使得计算机使用者和其他软件将计算机当作一个整体而不需要顾及到底层每个硬件是如何工作的。</p>
+<p>应用软件：工具软件、游戏软件、管理软件等都属于应用软件类。各种应用软件，虽然完成的工作各不相同，但它们都需要一些共同的基础操作，例如都要从输入设备取得数据，向输出设备送出数据，向外存写数据，从外存读数据，对数据的常规管理，等等。<br>
+这些基础工作也要由一系列指令来完成。人们把这些指令集中组织在一起，形成专门的软件，用来支持应用软件的运行，这种软件称为系统软件。一般来讲，系统软件包括操作系统和一系列基本的工具（比如编译器，数据库管理，存储器格式化，文件系统管理，用户身份验证，驱动管理，网络连接等方面的工具），是支持计算机系统正常运行并实现用户操作的那部分软件。</p>
+<h2 id="编程语言的发展">编程语言的发展</h2>
+<p>机器语言（二进制）→汇编语言→高级语言<br>
+计算机中指令和数据都用二进制来表示，它只认识0和1这样的数字（二进制数，大家平时看到的黑客大片，上面经常出现电脑屏幕上布满了0和1），为什么是二进制，我这里简要概述一下，电脑的设计思想源于电报机.</p>
+<p>早期的电报机是通过控制电灯开关的闭合（0可以表示开关的闭，1可以表示开关的合）来传输信息，聪明的人类可以制定多个0和1组合规则来传达信息。感兴趣的朋友推荐看《编码的奥秘》一书，里面使用通俗易懂的方式讲解了计算机的发展由来。</p>
+<figure data-type="image" tabindex="1"><img src="https://yujava.github.io/post-images/1585275520679.png" alt="" loading="lazy"></figure>
+<p>使用0和1这样的机器语言好处是CPU认识，可以直接执行，但是对于程序本身来说，没有可读性，难以维护，容易出错。所以就出现了汇编语言，它用助记符(代替操作码指令，用地址符号代替地址码。实际是对机器语言的一种映射，可读性高。</p>
+<figure data-type="image" tabindex="2"><img src="https://yujava.github.io/post-images/1585275562900.png" alt="" loading="lazy"></figure>
+<p>把汇编语言转换为机器语言需要一个叫做汇编器的工具。对于目前的CPU厂商，在推出的CPU指令时都会同时退出新的汇编器。如果你还在使用老版本的汇编器那么只能使用机器码来使用新的指令了。</p>
+<p>汇编语言的出现大大提高了编程效率，但是她的可读性相对来说还是较差，指令繁多复杂，不利于维护，还有一个问题就是不同CPU的指令集可能不同，这样就需要为不同的CPU编写不同的汇编程序。<br>
+于是又出现了高级语言比如C，或者是后来的C++,JAVA,C#。 高级语言把多条汇编指令合成成为了一个表达式，并且去除了许多操作细节（比如堆栈操作，寄存器操作），而是以一种更直观的方式来编写程序。<br>
+而面向对象的语言的出现使得程序编写更加符合我们的思维方式。我们不必把尽力放到低层的细节上，而更多的关注程序的本身的逻辑的实现。</p>
+<h2 id="总结">总结</h2>
+<p>计算机是硬件+软件构成，系统软件主要用于协调各硬件工作，并提供更简单的调用方式方便应用软件使用，使应用软件更专注于本身业务的实现。<br>
+在JAVA领域大多数从业者都是帮助企业开发满足公司业务需求的应用软件，由于计算机只认识0和1，而开发者（程序员）没法用一大堆的0和1来编程，高级编程语言被发明出来后，程序员编写的高级语言，经过相应的编译器编译后变成计算机认识的0和1，这样就搭建了开发者与计算机沟通的桥梁。</p>
+<figure data-type="image" tabindex="3"><img src="https://yujava.github.io/post-images/1585293730796.png" alt="" loading="lazy"></figure>
 <p>参考<br>
-清华大学郑莉教授的Java程序设计ppt（该章节除了举生活实例内容属于原创，其他教学内容均转载于郑莉教授的Java程序设计ppt）<br>
-伪代码、回数定义：https://baike.baidu.com/</p>
+计算机原理：https://blog.csdn.net/cc_net/article/details/10418711<br>
+计算机硬件/软件：https://baike.baidu.com/<br>
+通俗易懂揭秘了计算机由来：&lt;编码的奥秘&gt;<br>
+Java Tutorials：https://www.guru99.com/java-platform.html</p>
 ]]></content>
     </entry>
     <entry>
@@ -310,7 +118,7 @@ string three</p>
         <id>https://yujava.github.io/post/java-yufa/</id>
         <link href="https://yujava.github.io/post/java-yufa/">
         </link>
-        <updated>2020-03-27T08:52:41.000Z</updated>
+        <updated>2020-04-26T05:50:35.000Z</updated>
         <content type="html"><![CDATA[<p>写在前面的废话：JAVA作为企业级应用开发的首选编程语言，常年位于最流行开发语言排行榜榜首，得益于她面向对象的开发思想以及跨平台的特性（更多特性自行百度），受到广大开发者的追捧。<br>
 个人认为，想自学编程的朋友，把JAVA作为入门语言是最明智的选择。<br>
 从这篇文章开始我会快速给大家把JAVA涉及的知识点过一遍，自学的朋友可先从网上看免费的教学视频之后再来我这里温故而知新，被知识点卡住了的朋友可与我联系。</p>
@@ -739,106 +547,298 @@ java int转float精度丢失问题：https://blog.csdn.net/koreyoshi326/article/
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[计算机常识]]></title>
-        <id>https://yujava.github.io/post/compute-base/</id>
-        <link href="https://yujava.github.io/post/compute-base/">
+        <title type="html"><![CDATA[JAVA语法2]]></title>
+        <id>https://yujava.github.io/post/java-yu-fa-2/</id>
+        <link href="https://yujava.github.io/post/java-yu-fa-2/">
         </link>
-        <updated>2020-03-27T02:08:01.000Z</updated>
-        <content type="html"><![CDATA[<p>写在前面的废话：学习编程为什么要了解计算机原理相关知识，直接学习编程会敲代码不能胜任工作吗？答案是可以的，你只要会写代码可以胜任一般的工作，但是可以肯定的是只会写代码，你在IT行业的职业生涯不会长久。<br>
-其实这个问题跟就读培训学校和大学对应专业有点类似，知乎上有个比较有趣的评论，如果你想学会开车，报个驾校即可，但想造汽车，至少得读个大学。<br>
-这里举一个我自己自学的例子，我再看完某培训学校《JAVA28天入门》一套视频之后，居然还不知道程序是自上而下顺序执行的。</p>
-<p>进入主题，以下内容如有不对之处，欢迎联系指正。</p>
-<h2 id="计算机基本原理">计算机基本原理</h2>
-<p>众所周知，目前我们使用的计算机（笔记本或台式电脑），是由硬件和软件组合的。</p>
-<h3 id="1计算机硬件">1.计算机硬件</h3>
-<p>CPU(中央处理器,进行数据运算、传输等所有指令的执行时，都需要按照中央处理器的引导进行，作为整个计算机的心脏，控制这计算机的信息加工所有过程。)</p>
-<p>输入输出设备(键盘、摄像机、鼠标以及麦克风等属于输入设备；打印机以及显示器等属于输出设备，显示数据展示给人们看的设备)</p>
-<p>存储设备（RAM[random access memory]即随机存储内存，我们常说的内存，这种存储器在断电时将丢失其存储内容，故主要用于存储短时间使用的程序。ROM[Read-Only Memory]即只读内存，我们常说的硬盘，是一种只能读出事先所存数据的固态半导体存储器。）</p>
-<h3 id="2计算机软件">2.计算机软件</h3>
-<p>系统软件：系统软件是各类操作系统，如windows、Linux、UNIX等，还包括操作系统的补丁程序及硬件驱动程序，都是系统软件类。</p>
-<p>系统软件是负责管理计算机系统中各种独立的硬件，使得它们可以协调工作。系统软件使得计算机使用者和其他软件将计算机当作一个整体而不需要顾及到底层每个硬件是如何工作的。</p>
-<p>应用软件：工具软件、游戏软件、管理软件等都属于应用软件类。各种应用软件，虽然完成的工作各不相同，但它们都需要一些共同的基础操作，例如都要从输入设备取得数据，向输出设备送出数据，向外存写数据，从外存读数据，对数据的常规管理，等等。<br>
-这些基础工作也要由一系列指令来完成。人们把这些指令集中组织在一起，形成专门的软件，用来支持应用软件的运行，这种软件称为系统软件。一般来讲，系统软件包括操作系统和一系列基本的工具（比如编译器，数据库管理，存储器格式化，文件系统管理，用户身份验证，驱动管理，网络连接等方面的工具），是支持计算机系统正常运行并实现用户操作的那部分软件。</p>
-<h2 id="编程语言的发展">编程语言的发展</h2>
-<p>机器语言（二进制）→汇编语言→高级语言<br>
-计算机中指令和数据都用二进制来表示，它只认识0和1这样的数字（二进制数，大家平时看到的黑客大片，上面经常出现电脑屏幕上布满了0和1），为什么是二进制，我这里简要概述一下，电脑的设计思想源于电报机.</p>
-<p>早期的电报机是通过控制电灯开关的闭合（0可以表示开关的闭，1可以表示开关的合）来传输信息，聪明的人类可以制定多个0和1组合规则来传达信息。感兴趣的朋友推荐看《编码的奥秘》一书，里面使用通俗易懂的方式讲解了计算机的发展由来。</p>
-<figure data-type="image" tabindex="1"><img src="https://yujava.github.io/post-images/1585275520679.png" alt="" loading="lazy"></figure>
-<p>使用0和1这样的机器语言好处是CPU认识，可以直接执行，但是对于程序本身来说，没有可读性，难以维护，容易出错。所以就出现了汇编语言，它用助记符(代替操作码指令，用地址符号代替地址码。实际是对机器语言的一种映射，可读性高。</p>
-<figure data-type="image" tabindex="2"><img src="https://yujava.github.io/post-images/1585275562900.png" alt="" loading="lazy"></figure>
-<p>把汇编语言转换为机器语言需要一个叫做汇编器的工具。对于目前的CPU厂商，在推出的CPU指令时都会同时退出新的汇编器。如果你还在使用老版本的汇编器那么只能使用机器码来使用新的指令了。</p>
-<p>汇编语言的出现大大提高了编程效率，但是她的可读性相对来说还是较差，指令繁多复杂，不利于维护，还有一个问题就是不同CPU的指令集可能不同，这样就需要为不同的CPU编写不同的汇编程序。<br>
-于是又出现了高级语言比如C，或者是后来的C++,JAVA,C#。 高级语言把多条汇编指令合成成为了一个表达式，并且去除了许多操作细节（比如堆栈操作，寄存器操作），而是以一种更直观的方式来编写程序。<br>
-而面向对象的语言的出现使得程序编写更加符合我们的思维方式。我们不必把尽力放到低层的细节上，而更多的关注程序的本身的逻辑的实现。</p>
-<h2 id="总结">总结</h2>
-<p>计算机是硬件+软件构成，系统软件主要用于协调各硬件工作，并提供更简单的调用方式方便应用软件使用，使应用软件更专注于本身业务的实现。<br>
-在JAVA领域大多数从业者都是帮助企业开发满足公司业务需求的应用软件，由于计算机只认识0和1，而开发者（程序员）没法用一大堆的0和1来编程，高级编程语言被发明出来后，程序员编写的高级语言，经过相应的编译器编译后变成计算机认识的0和1，这样就搭建了开发者与计算机沟通的桥梁。</p>
-<figure data-type="image" tabindex="3"><img src="https://yujava.github.io/post-images/1585293730796.png" alt="" loading="lazy"></figure>
-<p>参考<br>
-计算机原理：https://blog.csdn.net/cc_net/article/details/10418711<br>
-计算机硬件/软件：https://baike.baidu.com/<br>
-通俗易懂揭秘了计算机由来：&lt;编码的奥秘&gt;<br>
-Java Tutorials：https://www.guru99.com/java-platform.html</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[JAVA入行攻略]]></title>
-        <id>https://yujava.github.io/post/java-index/</id>
-        <link href="https://yujava.github.io/post/java-index/">
-        </link>
-        <updated>2020-03-27T01:42:51.000Z</updated>
-        <content type="html"><![CDATA[<p>写在前面的废话：早在18年，本人就有意发表相关教程（或博客或自己录制视频等方式），来帮助更多想通过自身努力入行JAVA行业非计算机专业的学弟学妹们。无奈工作原因，导致这件事情一直搁置着；如今有幸入职一家加班少的公司，终于能在下班之余抽空来完成18年未完成的计划。</p>
-<p>众所周知，得益于互联网的高速发展，近些年IT行业的福利待遇水涨船高。对于咱们既没有好的创业条件或者机会，又没有什么社会资源（主要是家庭背景和人脉关系）刚毕业的学生来说，选择一个好的行业至关重要。在这里我向那些<code>没有就读计算机相关专业的朋友（无论是大专还是本科生或初高中辍学）</code>提供几条入行IT行业的建议；如果你认同，欢迎与我交流，不认同的朋友，麻烦不要喷。</p>
-<pre><code>培训学校
-自学
-通过国家举行的考试（比如成人高考、专升本、考研等）考进理想学校并选计算机相关专业
-自学+行内人士（有熟人从事IT行业）指导
+        <updated>2020-04-25T05:50:56.000Z</updated>
+        <content type="html"><![CDATA[<p>写在前面的废话，前面几个章节咱们学的都是&quot;静态的&quot;（计算机常识，Java数据类型与运算符），从这一章节开始，咱们开始接触Java&quot;动态的&quot;知识点。</p>
+<h2 id="流程控制">流程控制</h2>
+<p>生活中大小事情都是按照一定的流程/步骤去运转的。比如 每天早晨出门上班其实也是细分多个步骤的，第一步穿衣服起床，要根据天气（冷或者热）来决定穿什么衣服，然后洗漱，吃早餐（根据家里是否备有早餐来决定先吃早餐再出门还是出门后再吃早餐），出门（根据天气是否下雨来决定带雨伞），根据公司的距离来决定乘坐何种交通方式去上班。<br>
+学完这个章节后，我们会以<code>伪代码</code>的形式把上面的出门上班流程写出来。<br>
+伪代码（pseudocode），又称为虚拟代码，是高层次描述算法的一种方法。使用伪代码的目的是让被描述的算法可以容易地以任何一种编程语言（Pascal，C，Java，etc）实现。因此，伪代码必须结构清晰、代码简单、可读性好，介于自然语言与编程语言之间。以编程语言的书写形式指明算法职能。使用伪代码，不用拘泥于具体实现。它是半角式化、不标准的语言。可以把整个算法运行过程的结构用接近自然语言的形式（可以使用任何一种你熟悉的文字，关键是把程序的意思表达出来）描述出来。</p>
+<h3 id="1-if语句">1. if语句</h3>
+<p>只有if分支，没有else分支</p>
+<pre><code class="language-java">if (boolean-expression) {
+// statement1;
+}
 </code></pre>
-<h2 id="四种方式的利弊">四种方式的利弊。</h2>
-<p>从个人角度分析</p>
-<h3 id="1-培训学校">1. 培训学校</h3>
-<p>首先，我觉得培训学校最大的好处是稳妥、省心，之所以说她稳妥是因为有专业的老师给你上课，你只要跟着老师的学习路线走，直到毕业就业为止。省心主要体现当你遇到学习难题，在校期间可随时跟老师沟通，可以快速解答你的难题。</p>
-<blockquote>
-<p>凡是都有利弊，培训学校也不是完美的。培训学校的弊端之一是高额的费用，以北大青鸟2010年JAVA培训的收费情况为例，为期1年半的培训总学费将近4万元，加上购买笔记本电脑（5000左右）、资料费、伙食费学完到就业至少准备5万元费用。<br>
-相比费用，我觉得培训学校最大的弊端是很多学生缺乏自学能力的培养，读过大学的朋友都知道，到了大学一个辅导员可能带好几个班，给你上课的老师也不在是固定的那几个，大学生涯学生们能有多少成长很大程度看自己的自我管理和自我学习能力。<code>自学能力是决定你踏入社会后能否在短时间里有明显进步的重要因素，特别是咱们搞IT的，技术的更迭非常快，你只有不断的给自己充电才能保证不被行业淘汰</code>。当然并不是说培训学校的学生没有自学能力，只是她的这种跟义务教育类似的授课模式导致学生们缺乏了自学能力的锻炼。</p>
-</blockquote>
-<h3 id="2-自学">2. 自学</h3>
-<p>我们再来看自学，与培训学校是完全相反的一种方式，首先是0费用（<code>现在网上有各种免费的教学视频，这里推荐学堂在线APP里面，清华大学，郑莉教授的Java程序设计</code>），另一个就是对自学能力极大的提升，因为当你遇到问题除了百度/谷歌以外，就得靠自己去解决。</p>
-<blockquote>
-<p>自学也有她的弊端，首先她需要比较强的自学能力和足够的耐心去面对学习过程遇到的难题。最大的难题就是自学完成后如何就业，在这里我要提醒一下，会写代码并不等于可以找到与之匹配的工作。<br>
-你得通过企业发起的面试邀请。<code>面试也是一门学问，分为好几个步骤，从写简历到投递简历、技术面试（有的公司分为笔试和面试，面试可能又分为初试、复试等）、HR面谈、谈薪、入职</code>；如果你是非计算机毕业或者没有读过培训学校，这里面每个环节都得靠自己去摸索。<br>
-众多环节中，你遇到某一个问题可能导致你想放弃从事IT行业的决心；比如，没有面试电话（可能是简历写得不好、或学历不够、或投递的方式不正确）；技术面试总通过不了；技术通过了，但是HR面谈挂了；技术通过了，HR面谈也没问题，谈薪谈崩了；所有面试都过了，入职资料备不齐，入职失败；<br>
-当我写到这里，同行的同事可能会笑话我，只要技术面试通过，肯定能拿到offer（入职通知书），我想说的是，上面我说的每种情况都不是胡编乱造危言耸听的，因为确确实实每种情况都在我身上发生过。<br>
-<code>这在里我再次强调，本篇教程针对的是非计算机专业（大专/本科/初高中辍学）的朋友</code>，如果你是计算机相关专业科班出身或曾经就读过培训学校的朋友不认同我的说法，是很正常的，据我所知，培训学校在最后一个学期专门做就业指导，而大部分计算机班科出身的学生都能通过校招环节找到实习工作。所以他们可能不需要独自去了解这些东西，他们可能只要按部就班就能顺利入行IT行业。</p>
-</blockquote>
-<h3 id="3-国考">3. 国考</h3>
-<p>通过国家举行的考试（比如成人高考、专升本、考研等）考进理想学校并选计算机相关专业。<br>
-可能大家会觉得通过国考的方式考入理想学校就读计算机专业这种特殊的方式，根本就是开玩笑，花这个时间精力和成本是就读培训学校或自学的很多倍；没错，这种方式确实是很需要高昂的成本，首先得像高考一样去复习，然后又参加一次&quot;高考&quot;，还不一定一次就能考得上。考上后时间成本，读书学费等成本都是不小的开销。</p>
-<blockquote>
-<p>凡是都有两面性，这种方式也有她的好处，最显而易见的是不管通过哪种国考方式入学毕业后，你的学历<br>
-肯定是有所提升（很多大企业对学历一直都很重视）；<br>
-学历是实实在在看的见的提升，<code>还有一些潜藏于心、不容易被发掘的部分，比如：入学理想大学就读计算机相关专业，更全面、更系统掌握计算机知识，为以后的自我提升打下坚实基础</code>；<br>
-另一个你就读更好的学校，<code>你认识的老师、同学相对以前大概率是更优秀的，这对你以后步入社会能获得更多机会提供了条件</code>。说到这里，很多朋友想知道就读培训学校和大学对应专业到底有什么不同。这里不做任何评价，我只列举一个培训学校安排的课程与大学对应专业做对比，大家自己去品。</p>
-</blockquote>
-<p>以武汉大学计算机科学与技术专业为例</p>
-<blockquote>
-<p>计算机科学导论、数字逻辑、高级语言程序设计、离散数学、数据结构、计算机组成与设计、操作系统、云计算平台与技术[学科基础（平台）课程]<br>
-数据库系统、计算机网络、编译原理、软件工程、算法设计与分析、嵌入式系统、数字逻辑课程设计、计算机组成与设计课程设计、操作系统课程设计、计算机网络课程设计、大型应用软件课程设计等[其他主干课程]</p>
-</blockquote>
-<p>以传智播客(黑马程序员)培训学校培训javaEE为例</p>
-<blockquote>
-<p>Java基础语法、面向对象基础、API基础	、集合基础（JavaEE基础班课程）；异常、IO、多线程、网络编程、Lambda、反射（Java语言进阶）；<br>
-Git、Linux、HTML5&amp;CSS&amp;Nginx、Servlet、Cookie&amp;Session、MySQL、JDBC、MyBatis、JavaScript、VUE、ElementUI+案例、Redis、Maven（JavaWeb）；Spring、SpringMVC、Zookeeper、Dubbo、Spring Boot、Spring Cloud、RabbitMQ、Elasticsearch（框架阶段）；项目实战</p>
-</blockquote>
-<p>从两者课程安排来看，个人觉得培训学校几乎全部都是工作中应用技术，而大学是培养学生对本专业系统而深刻的认识（知其然知其所以然）。关于培训学校和大学科班专业的区别，有兴趣的朋友可在网上百度，多看些评论，自己慢慢细品</p>
-<h3 id="4自学指导">4.自学+指导</h3>
-<p>主要靠自学，不懂的向行内人士（有熟人从事IT行业）请教。<br>
-最后一种方式，是较上面三种方式比较趋中的一种，也是我个人比较推荐的一种；既培养了自学能力又能在学习或找工作过程中遇到困难而不会孤立无助，<code>关键还能省几万培训学费</code>（没有从事IT熟人的朋友，可与我联系，我会利用下班空闲时间帮大家，解答学习或面试遇到的问题，已助大家早日找到心仪的工作）。</p>
+<p>if-else语句</p>
+<pre><code class="language-java">if (boolean-expression) {
+// statement1 ;
+}
+else {
+// statement2 ;
+}
+</code></pre>
+<p>if-else语句的特殊形式</p>
+<pre><code class="language-java">if (boolean expression) {
+//statement1;
+}
+else if (boolean expression) {
+//statement2;
+}
+else if (boolean expression){
+//statement;
+}
+…
+else {
+//statement;
+}
+</code></pre>
+<p>前面咱们学的三目运算符，其实是if-else语句的简写</p>
+<pre><code class="language-java">// 如果a大于b则用a减去b；否则b减去a
+int a = 5;
+int b = 3;
+int diff = a &gt; b ? a-b : b-a;
+
+// int diff = a &gt; b ? a-b : b-a;三目运算表达式，可以用if-else语句表达
+int diff;
+if(a &gt; b){
+    diff = a-b;
+}else{
+    diff = b-a;
+}
+</code></pre>
+<p>生活中太多条件语句的例子，比如刚才我们所说的出门上班，<code>根据天气（冷或者热）来决定穿什么衣服</code>，伪代码<br>
+if(气温 &gt; -28℃ &amp;&amp; 气温 &lt;= 10℃ ){<br>
+System.out.println(&quot;需要穿羽绒服出门&quot;);<br>
+}else if(气温 &gt; 10℃ &amp;&amp; 气温 &lt; 28℃){<br>
+System.out.println(&quot;需要穿外套出门&quot;);<br>
+}else if(气温 &gt;= 28℃ &amp;&amp; 气温 &lt; 34℃){<br>
+System.out.println(&quot;穿短袖出门&quot;);<br>
+}else{<br>
+System.out.println(&quot;不建议出门&quot;);<br>
+}</p>
+<h3 id="2-switch语句">2. switch语句</h3>
+<p>语法形式</p>
+<pre><code class="language-java">switch (switch-expression) {
+   case value1: 
+       statements for case1;
+       break;
+   case value2:
+       statements for case2;
+       break;
+   ...
+   case valueN: 
+       statements for caseN; 
+       break;
+   default: 
+       statements for default case;
+       break;
+}
+</code></pre>
+<p>注意问题<br>
+switch-expression、常量值value1到valueN必须是整形或字符型<br>
+<code>如果表达式的值和某个case后面的值相同，则从该case之后开始执行，直到break语句为止</code><br>
+default是可有可无的，若没有一个常量与表达式的值相同，则从default之后开始执行</p>
+<p>生活中小朋友上幼儿园有年龄的限制，伪代码<br>
+switch ( 年龄 ) {<br>
+case 3:<br>
+System.out.println(&quot;就读幼儿园小班&quot;);<br>
+break;<br>
+case 4:<br>
+System.out.println(&quot;就读幼儿园中班&quot;);<br>
+break;<br>
+case 5:<br>
+System.out.println(&quot;就读幼儿园大班&quot;);<br>
+break;<br>
+default:<br>
+System.out.println(&quot;该年龄不适合就读幼儿园&quot;);<br>
+break;<br>
+}</p>
+<h3 id="3-for语句">3.  for语句</h3>
+<p>是Java三个循环语句中功能较强、使用较广泛的一个<br>
+for循环可以嵌套<br>
+语法格式如下</p>
+<pre><code class="language-java">for ( start-expression ;  check-expression ;  update-expression ) {
+    //body of the loop;
+}
+</code></pre>
+<p>start-expression完成循环变量和其他变量的初始化工作<br>
+check-expression是返回布尔值的条件表达式，用于判断循环是否继续<br>
+update-expression用来修整循环变量，改变循环条件<br>
+三个表达式之间用分号（<code>;</code>）隔开</p>
+<p>同样生活中到处可见循环的例子（重复做某件或多件事情），在校期间每天三点一线（宿舍、食堂、教室）；每天在家做饭（煮饭、洗菜、炒菜、吃饭、洗碗）等等。<br>
+以在校一周生活重复三点一线为例（每周天可回家休息一天），伪代码<br>
+for(day d=&quot;周一&quot;; d&lt;&quot;周天&quot;;d++){<br>
+System.out.println(&quot;宿舍睡觉&quot;);<br>
+System.out.println(&quot;食堂吃饭&quot;);<br>
+System.out.println(&quot;教室上课&quot;);<br>
+}</p>
+<p>以在校一月生活重复三点一线为例（每周天可回家休息一天），伪代码<br>
+for(week w=&quot;第一周&quot;;w&lt;=&quot;第四周&quot;;w++){<br>
+for(day d=&quot;周一&quot;; d&lt;&quot;周天&quot;;d++){<br>
+System.out.println(&quot;宿舍睡觉&quot;);<br>
+System.out.println(&quot;食堂吃饭&quot;);<br>
+System.out.println(&quot;教室上课&quot;);<br>
+}<br>
+System.out.println(&quot;回家休息一天&quot;);<br>
+}</p>
+<p>增强for循环<br>
+用来对数组或者集合对象进行遍历<br>
+语法格式：</p>
+<pre><code class="language-java">for (Type name : 数组或集合类型对象) {
+//循环体;
+}
+</code></pre>
+<p>以生活中洗碗为例；伪代码<br>
+for (bowl  s : bowlList) {<br>
+System.out.println(&quot;洗洁精洗一次&quot;);<br>
+System.out.println(&quot;清水洗一次&quot;);<br>
+}</p>
+<h3 id="4-while语句">4. while语句</h3>
+<p>语法形式：</p>
+<pre><code class="language-java">while (check-expression) {
+    //body of the loop;
+}
+</code></pre>
+<p>解释<br>
+条件表达式(check-expression)的返回值为布尔型<br>
+循环体可以是单个语句，也可以是复合语句块</p>
+<p>执行过程<br>
+先判断check-expression的值，为真则执行循环体<br>
+循环体执行完后再无条件转向条件表达式做计算与判断；当计算出条件表达式的值为假时，跳过循环体执行while语句后面的语句。若为真，则继续执行循环</p>
+<p>本人经常看法制节目，已犯罪入狱为例子，某人犯罪被判1年（以365天计算），伪代码<br>
+int day=1;<br>
+while (day &lt;= 365 ) {<br>
+System.out.println(&quot;继续劳动改造&quot;);<br>
+day++;<br>
+}<br>
+System.out.println(&quot;回归社会正常生活&quot;);</p>
+<h3 id="5-do-while语句">5. do while语句</h3>
+<p>语法形式：</p>
+<pre><code class="language-java">do {
+    //body of the loop;
+} while (check-expression);
+</code></pre>
+<p>与while语句很类似，不同的是它首先无条件的执行一遍循环体，再来判断条件表达式的值，若表达式的值为真，则再运行循环体，否则跳出do-while循环，执行下面的语句</p>
+<p>特点：<code>它的循环体至少要执行一次</code></p>
+<p>入狱改造，例子do while写法，伪代码<br>
+int day=1;<br>
+do {<br>
+System.out.println(&quot;继续劳动改造&quot;);<br>
+day++;<br>
+} while (day &lt;= 365);</p>
+<h3 id="6-break语句">6. break语句</h3>
+<p>功能<br>
+跳出循环，不再执行剩余部分</p>
+<p>适用场合<br>
+在switch 结构中，用来终止switch语句的执行在for循环及while循环结构中，用于终止break语句所在的最内层循环；与标号一同使用时，将跳出标号所标识的循环。<br>
+也可用在代码块中，用于跳出它所指定的块。</p>
+<p>生活中有太多重复动作需要break，不然会出很多大问题，比如 吃饭，当吃饱了就不再盛饭了。<br>
+for(rice r:riceList){<br>
+if( i have full){<br>
+break;<br>
+}<br>
+System.out.println(&quot;继续盛饭吃&quot;+r);<br>
+}</p>
+<h3 id="7-continue语句">7. continue语句</h3>
+<p>必须用于循环结构中<br>
+停止本次迭代，回到循环起始处，开始下一次</p>
+<p>迭代过程<br>
+有两种使用格式<br>
+不带标号的continue语句<br>
+终止当前这一轮的循环，跳出本轮循环剩余的语句，直接进入当前循环的下一轮<br>
+带标号的continue语句<br>
+使程序的流程直接转入标号标明的循环层次</p>
+<p>继续以洗碗为例，如果碗已经有缺角就不要了；伪代码<br>
+for (bowl  s : bowlList) {<br>
+if(s is missing corner){<br>
+System.out.println(&quot;碗已经缺角，扔垃圾桶&quot;);<br>
+continue;<br>
+}<br>
+System.out.println(&quot;洗洁精洗一次&quot;);<br>
+System.out.println(&quot;清水洗一次&quot;);<br>
+}</p>
+<h2 id="数组">数组</h2>
+<p>数组由同一类型的对象或者基本数据组成，并封装在同一个标识符（数组名称）下。<br>
+数组是对象<br>
+动态初始化<br>
+可以赋值给Object类型的变量<br>
+在数组中可以调用类Object 的所有方法<br>
+每个数组都有一个由 public final 修饰的成员变量：length ，即数组含有元素的个数（length可以是正数或零）<br>
+数组元素<br>
+数组中的变量被称作数组的元素<br>
+元素没有名字，通过数组名字和非负整数下标值引用数组元素。</p>
+<p>数组引用的声明<br>
+声明数组时无需指明数组元素的个数，也不为数组元素分配内存空间<br>
+不能直接使用，必须经过初始化分配内存后才能使用</p>
+<p>数组声明举例<br>
+Type[ ] arrayName;<br>
+例如：<br>
+int[] intArray;<br>
+String[] stringArray;<br>
+Type arrayName[ ];<br>
+例如：<br>
+int intArray[];<br>
+String stringArray[];</p>
+<p>数组的创建<br>
+用关键字new构成数组的创建表达式，可以指定数组的类型和数组元素的个数。元素个数可以是<br>
+常量也可以是变量<br>
+基本类型数组的每个元素都是一个基本类型的变量；引用类型数组的每个元素都是对象的的引用</p>
+<p>数组的创建举例<br>
+arryName=new Type[componets number];<br>
+例如：<br>
+int[] ai; ai=new int[10];<br>
+String[] s; s=new String[3];<br>
+或者可以将数组的声明和创建一并执行<br>
+int ai[]=new int[10];<br>
+可以在一条声明语句中创建多个数组<br>
+String[] s1=new String[3], s2=new String[8];</p>
+<p>数组元素的初始化<br>
+声明数组名时，给出了数组的初始值，程序便会利用数组初始值创建数组并对它的各个元素进行初始化<br>
+int a[]={22, 33, 44, 55};<br>
+创建数组的时，如果没有指定初始值，数组便被赋予默认值初始值。<br>
+基本类型数值数据，默认的初始值为0；<br>
+boolean类型数据，默认值为false;<br>
+引用类型元素的默认值为null。<br>
+程序也可以在数组被构造之后改变数组元素值</p>
+<p>使用数组<br>
+引用数组的一个元素：<br>
+arrayName[index]<br>
+数组下标必须是 int , short, byte, 或者 char。<br>
+下标从零开始计数。<br>
+元素的个数即为数组的长度，可以通过 arryName.length得到。<br>
+元素下标最大值为 length – 1，如果超过最大值，将会产生数组越界异常（ArrayIndexOutOfBoundsException）<br>
+数组名是一个引用：</p>
+<pre><code class="language-java">public class Arrays{ 
+    public static void main(String[] args){
+        int[] a1 = { 1, 2, 3, 4, 5 };
+        int[] a2;
+        a2 = a1;
+        for(int i = 0; i &lt; a2.length; i++) a2[i]++;
+        for(int i = 0; i &lt; a1.length; i++)
+        System.out.println( &quot;a1[&quot; + i + &quot;] = &quot; + a1[i]);
+    }
+}
+</code></pre>
+<p>运行结果：<br>
+a1[0] = 2<br>
+a1[1] = 3<br>
+a1[2] = 4<br>
+a1[3] = 5<br>
+a1[4] = 6</p>
+<p>字符串引用构成的数组——每个元素都是引用</p>
+<pre><code class="language-java">public class ArrayOfStringsDemo{ 
+    public static void main(String[] args){ 
+        String[] anArray ={ &quot;String One&quot;, &quot;String Two&quot;, &quot;String Three&quot;};
+        for (int i = 0; i &lt; anArray.length; i++){ 
+            System.out.println(anArray[i].toLowerCase());
+        }
+    }
+}
+</code></pre>
+<p>运行结果：<br>
+string one<br>
+string two<br>
+string three</p>
 <h2 id="总结">总结</h2>
-<p>如果时间充裕且条件允许<code>并对编程很感兴趣</code>，推荐第三种方式通过国考方式进入理想学校并选计算机相关专业；<br>
-如果想省心，能准备几万的学费，可选第一种报名培训学校；<br>
-如果想省一笔不小的培训费，并且培养自己的自学能力选择，第四种方式自学+行内人士指导（没有熟人的可与我联系，通过下班空闲时间传授JAVA知识或面试经验，当然会适当收取少许费用，<code>保证就业，找不到工作费用全免，先上课后付费，没学懂可拒绝支付费用，总费用不及培训学校十分之一，针对贫困且好学的朋友，可免费指导教学</code>）是非常好的选择。<br>
-如果对自己的自学能力足够自信，并有遇到困难不放弃的决心，第二种方式自学也是不错的选择</p>
+<h2 id="练兵">练兵</h2>
+<p>数学上：一般的，一个自然数，如果该自然数从左向右读和从右向左读都是一样的数，则这个数为回数。比如101，32123，9999等等都是回数。请用程序证明18977981是不是回数？（15年面试题）</p>
+<p>参考<br>
+清华大学郑莉教授的Java程序设计ppt（该章节除了举生活实例内容属于原创，其他教学内容均转载于郑莉教授的Java程序设计ppt）<br>
+伪代码、回数定义：https://baike.baidu.com/</p>
 ]]></content>
     </entry>
 </feed>
