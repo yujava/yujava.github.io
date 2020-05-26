@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yujava.github.io</id>
     <title>coding-self</title>
-    <updated>2020-04-28T05:51:46.036Z</updated>
+    <updated>2020-05-26T16:20:51.729Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yujava.github.io"/>
     <link rel="self" href="https://yujava.github.io/atom.xml"/>
@@ -10,6 +10,42 @@
     <logo>https://yujava.github.io/images/avatar.png</logo>
     <icon>https://yujava.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, coding-self</rights>
+    <entry>
+        <title type="html"><![CDATA[淘宝客户说明书]]></title>
+        <id>https://yujava.github.io/post/tao-bao/</id>
+        <link href="https://yujava.github.io/post/tao-bao/">
+        </link>
+        <updated>2020-05-26T14:11:25.000Z</updated>
+        <content type="html"><![CDATA[<p>写在前面的废话：店主最近在整理学习资料时，一个偶然的机会在知乎上面刷到一个学弟自学Java入行的文章<a href="https://zhuanlan.zhihu.com/p/32682838">零基础Java学习路线</a>，出于对有相同经历的同行有特别的亲切感加上文章的点赞率颇高，耐心的读完文章，文章中里面很多观点都感同身受。有兴趣的朋友可以看一下，比较中肯和有意思（对于自己曾经坎坷经历再回头去看，会发现是一件很有意思的事情）的文章。</p>
+<p>本文针对Java入行学习资料的整理，从淘宝购买Java入行学习资料宝贝的客户，可根据该篇文章进行系统的学习，<code>由于每个学员对学习资料的接受程度（喜欢程度）不一样，所以店主提供了多套学习资料，大家在学习前不用急与看完某一套资料，可以先话半天时间进行筛选，选出最适合自己的一套教程进行学习，由于现在网上的教程也是从各个学校（培训学习或大学）收集的录播视频，有些教程的技术可能不适用当前时代，亦或某些教程针对的学生基础不一样，课程过于深入，不适合0基础的学员，所以不管大家选那套教程请按照我列举的学习路线来进行学习。</code></p>
+<pre><code>Java学习路线(店主根据互联网各大企业最新的行业要求定制的学习路线图)
+Java学习资料
+</code></pre>
+<h2 id="java学习路线">Java学习路线</h2>
+<figure data-type="image" tabindex="1"><img src="https://yujava.github.io/post-images/1590503852201.png" alt="" loading="lazy"></figure>
+<h2 id="java学习资料">Java学习资料</h2>
+<h3 id="1-最全面">1. 最全面</h3>
+<p>阿里云大学<a href="https://edu.aliyun.com/roadmap/java">Java学习路线</a><br>
+课程包含：Java基础语言、数据库开发、JavaWeb基础、开发框架、开发工具、面试技巧<br>
+课程特色：整理的很全面，页面排版做的非常棒，马爸爸还是做了很多利民的事情，点个赞。<br>
+页面预览<br>
+<img src="https://yujava.github.io/post-images/1590505404014.png" alt="" loading="lazy"><br>
+说明：该课程需要登入阿里云后才能观看，大家可直接用支付宝扫码登陆即可。如遇到问题可直接联系店主，店主博客关于栏有店主的微信，也可扫首页头像二维码</p>
+<h3 id="2-最丰富">2. 最丰富</h3>
+<p>传智播客，大家可能对该培训机构不是很熟悉，如果经常在网上搜培训视频的学员，对黑马程序员的视频肯定不陌生，黑马程序员是由传智播客联合中关zhidao村软件园、CSDN，并委托传智播客进行教学实施的软件开发专高端培训机构。店主以前自学看的就是传智播客的视频，虽然完全没有学懂😂<br>
+JavaSE部分-<a href="http://yun.itheima.com/course/540.html?jingjiaczpz-PC-1">java零基础入门到精通（2019版）</a></p>
+<p>JavaEE部分-<a href="http://yun.itheima.com/course/590.html?jingjiaczpz-PC-1">27天超系统javaweb快速入门</a></p>
+<p>页面预览<br>
+<img src="https://yujava.github.io/post-images/1590506195376.png" alt="" loading="lazy"><br>
+说明：传智播客官网只有部分章节，如需看完整章节，需在视频的右边有，下载完整视频按钮，点击旁边的提取码即可复制云盘链接密码。</p>
+<h3 id="3-最牛b">3. 最牛B</h3>
+<p>学堂在线，是由清华大学研发出的中文MOOC（大规模开放在线课程，简称慕课）平台，是教育部在线教育研究中心的研究交流和成果应用平台， 于2013年10月10日正式启动，面向全球提供在线课程。任何拥有上网条件的学生均可通过该平台，在网上学习课程视频。店主博客文章知识点是根据清华老师的课件来撰写的，个人比较推荐基础视频，看名校老师的更容易理解。</p>
+<p>JavaSE部分-<a href="http://yun.itheima.com/course/540.html?jingjiaczpz-PC-1">Java程序设计(2020春)-清华大学 计算机科学与技术系教授 郑莉</a></p>
+<p>说明：可惜目前学堂在线没有JavaWeb的课程，大家可根据自身爱好从以上两个途径挑自己偏爱的视频学习JavaWeb部分。学堂在线支持电脑在线观看，亦支持下载 学堂在线 App观看。</p>
+<h2 id="特别说明">特别说明</h2>
+<p>1.本博客是开放式博客，在这里向淘宝客户解释一下，你们通过店主淘宝购买的学习资料，在以后学习/简历/面试/谈薪/入职 过程中遇到问题后拍下<a href="https://h5.m.taobao.com/awp/core/detail.htm?ut_sk=1.WF0iImaz3B8DAA0W2v7cs71h_21380790_1590508026987.AliPay.1&amp;id=618921621818&amp;sourceType=item&amp;price=100&amp;suid=4627E693-3A2B-45C9-9536-179C0DEDDDB3">0基础JAVA入行必备课</a>后，全额退款宝贝-<a href="https://item.taobao.com/item.htm?ut_sk=1.WF0iImaz3B8DAA0W2v7cs71h_21380790_1590508026987.AliPay.1&amp;id=619149658722&amp;sourceType=item&amp;price=16.88&amp;suid=3EB5F938-A22D-482F-B6FC-0E14BAB713AD">全网最懂0基础入门最全JAVA入行学习资料</a>的费用。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JAVA入行攻略]]></title>
         <id>https://yujava.github.io/post/java-index/</id>
